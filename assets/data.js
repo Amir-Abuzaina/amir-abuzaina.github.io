@@ -4,11 +4,11 @@
 // ============================================================
 
 window.SITE = {
-  // Landing page panels (left → right). video: same shot, different layer per panel.
+  // Landing page panels (left → right). video: mp4 loop, or image: gif/jpg. color: category colour (filters + hover).
   panels: [
-    { id: "art", label: "Art", color: "#ED4305", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
-    { id: "shaders", label: "Technical", color: "#33987F", tags: ["rendering", "shaders", "optimization"], video: "" },
-    { id: "pipeline", label: "Pipeline & Production", color: "#ED7E00", tags: ["tools", "workflows", "virtual production"], video: "" },
+    { id: "art", label: "Art", color: "#4536E7", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
+    { id: "shaders", label: "Technical", color: "#E74536", tags: ["rendering", "shaders", "optimization"], video: "assets/media/fairuz.mp4" },
+    { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["tools", "workflows", "virtual production"], video: "", image: "https://cdna.artstation.com/p/assets/images/images/096/108/552/original/amir-abuzaina-autolod-ezgif-com-optimize.gif" },
   ],
   // Bottom strip. logo: path to an SVG/PNG in assets/logos/ (white or transparent works best). No logo = name shown as text.
   tools: [
@@ -45,7 +45,20 @@ window.PROJECTS = [
     year: "2026",
     video: "",
     poster: "https://cdnb.artstation.com/p/assets/images/images/100/011/109/large/amir-abuzaina-asset.webp",
-    gallery: ["https://cdnb.artstation.com/p/assets/images/images/100/011/113/large/amir-abuzaina-asset.webp"],
+    highlights: ["Real-time rendering with Lumen", "REPLACE", "REPLACE"],
+    breakdown: [{ heading: "Overview", body: "Lumen real-time rendering collection of works in Unreal Engine 5." }],
+    links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dLJOyW" }],
+  },
+  {
+    id: "lighting-doodles-2",
+    title: "Lighting Doodles II",
+    summary: "Collection of real-time Lumen lighting studies.",
+    tags: ["lighting"],
+    software: ["UE5"],
+    categories: ["art"],
+    year: "2026",
+    video: "",
+    poster: "https://cdnb.artstation.com/p/assets/images/images/100/011/113/large/amir-abuzaina-asset.webp",
     highlights: ["Real-time rendering with Lumen", "REPLACE", "REPLACE"],
     breakdown: [{ heading: "Overview", body: "Lumen real-time rendering collection of works in Unreal Engine 5." }],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dLJOyW" }],
@@ -151,21 +164,6 @@ window.PROJECTS = [
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dyQmdA" }],
   },
   {
-    id: "trees",
-    title: "REPLACE: tree project name",
-    summary: "REPLACE: one line on the tree project.",
-    tags: ["lighting", "foliage"],
-    software: ["UE5"],
-    categories: ["art"],
-    year: "2026",
-    video: "assets/media/trees.mp4",
-    poster: "assets/media/trees.jpg",
-    gallery: ["assets/media/trees-still-1.jpg", "assets/media/trees-still-2.jpg"],
-    highlights: ["REPLACE"],
-    breakdown: [{ heading: "Overview", body: "REPLACE" }],
-    links: [],
-  },
-  {
     id: "maryticide",
     title: "Maryticide",
     summary: "Point-and-click game prototype.",
@@ -218,6 +216,21 @@ window.PROJECTS = [
       { heading: "Limitations", body: "The approach could be improved by using texture arrays for the atlases. It also requires high atlas sizes, around 60 MB for 1k resolution with 8 packed textures." },
     ],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/oJEyYm" }],
+  },
+  {
+    id: "global-vegetation-shader",
+    title: "Global Vegetation Shader",
+    summary: "REPLACE: one line on the vegetation shader.",
+    tags: ["shaders", "foliage", "materials"],
+    software: ["UE5"],
+    categories: ["shaders"],
+    year: "2026",
+    video: "assets/media/trees.mp4",
+    poster: "assets/media/trees.jpg",
+    gallery: ["assets/media/trees-still-1.jpg", "assets/media/trees-still-2.jpg"],
+    highlights: ["REPLACE"],
+    breakdown: [{ heading: "Overview", body: "REPLACE" }],
+    links: [],
   },
   {
     id: "fairuz",

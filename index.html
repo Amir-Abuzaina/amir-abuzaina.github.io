@@ -14,7 +14,13 @@
   <canvas id="field"></canvas>
 
   <!-- centre: three discipline panels joined by bridges -->
-  <section class="stage"><div class="panels" id="panels"></div></section>
+  <section class="stage">
+    <div class="stage-inner">
+      <div class="panels" id="panels"></div>
+      <!-- hover tray: moving thumbnails of the hovered category -->
+      <div class="tray" id="tray"><div class="tray-track" id="track"></div></div>
+    </div>
+  </section>
 
   <!-- bottom: tools -->
   <div class="toolstrip" id="tools"></div>
@@ -24,13 +30,52 @@
   <script>
     // panels
     const el = document.getElementById("panels");
+    const panelMedia = p => p.video ? `<video src="${p.video}" muted loop playsinline autoplay preload="auto"></video>`
+      : p.image ? `<img src="${p.image}" alt="">` : '<div class="ph">[ LOOP ]</div>';
     el.innerHTML = SITE.panels.map((p, i) => `
       ${i ? '<div class="bridge"></div>' : ""}
-      <a class="panel" href="portfolio.html?cat=${p.id}">
+      <a class="panel" href="portfolio.html?cat=${p.id}" data-cat="${p.id}" style="--c:${p.color}">
         <span class="num">0${i + 1}</span>
-        <div class="frame">${p.video ? `<video src="${p.video}" muted loop playsinline autoplay preload="auto"></video>` : '<div class="ph">[ LOOP ]</div>'}</div>
+        <div class="frame">${panelMedia(p)}</div>
         <div class="cap"><h2>${p.label}</h2><div class="mini">${p.tags.map(cap).join(" · ")}</div></div>
       </a>`).join("");
+
+    // hover tray
+    const tray = document.getElementById("tray"), track = document.getElementById("track");
+    let hideT, current = null;
+    const thumb = p => `
+      <a class="thumb" href="project.html?id=${p.id}">
+        <div class="frame">${p.video ? `<video src="${p.video}" muted loop playsinline autoplay preload="metadata"></video>` : p.poster ? `<img src="${p.poster}" alt="" loading="lazy">` : '<div class="ph"></div>'}</div>
+        <span>// ${p.title}</span>
+      </a>`;
+    function openTray(cat) {
+      clearTimeout(hideT);
+      if (current === cat) return;
+      current = cat;
+      const panel = SITE.panels.find(x => x.id === cat);
+      const list = PROJECTS.filter(p => p.categories.includes(cat));
+      track.innerHTML = list.map(thumb).join("");
+      tray.style.setProperty("--c", panel.color);
+      el.style.setProperty("--c", panel.color);
+      // scroll like a marquee when the row is wider than the tray
+      track.classList.remove("scroll");
+      requestAnimationFrame(() => {
+        if (track.scrollWidth > tray.clientWidth) {
+          track.innerHTML += list.map(thumb).join("");
+          track.style.setProperty("--dur", `${list.length * 4}s`);
+          track.classList.add("scroll");
+        }
+      });
+      tray.classList.add("open");
+    }
+    function closeTray() { hideT = setTimeout(() => { tray.classList.remove("open"); current = null; }, 300); }
+    el.querySelectorAll(".panel").forEach(a => {
+      a.addEventListener("mouseenter", () => openTray(a.dataset.cat));
+      a.addEventListener("mouseleave", closeTray);
+    });
+    tray.addEventListener("mouseenter", () => clearTimeout(hideT));
+    tray.addEventListener("mouseleave", closeTray);
+
     document.getElementById("tools").innerHTML = SITE.tools.map(t => `<span class="tool" title="${t.name}">${t.logo ? `<img src="${t.logo}" alt="${t.name}">` : t.name}</span>`).join("");
 
     // dot field
