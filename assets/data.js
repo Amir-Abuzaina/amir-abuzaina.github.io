@@ -8,7 +8,7 @@ window.SITE = {
   panels: [
     { id: "art", label: "Art", color: "#4536E7", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
     { id: "shaders", label: "Technical", color: "#E74536", tags: ["rendering", "shaders", "optimization"], video: "assets/media/fairuz.mp4" },
-    { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["tools", "workflows", "virtual production"], video: "", image: "https://cdna.artstation.com/p/assets/images/images/096/108/552/original/amir-abuzaina-autolod-ezgif-com-optimize.gif" },
+    { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["tools", "workflows", "virtual production"], video: "assets/media/rexy-wheels.mp4" },
   ],
   // Bottom strip. logo: path to an SVG/PNG in assets/logos/ (white or transparent works best). No logo = name shown as text.
   tools: [
@@ -16,7 +16,7 @@ window.SITE = {
     { name: "Houdini", logo: "assets/logos/houdini.svg" },
     { name: "Blender", logo: "assets/logos/blender.svg" },
     { name: "Substance Designer", logo: "" },
-    { name: "Photoshop", logo: "" },
+    { name: "Photoshop", logo: "assets/logos/photoshop.svg" },
     { name: "C++", logo: "assets/logos/cplusplus.svg" },
     { name: "HLSL", logo: "" },
     { name: "AI workflows (2D/3D)", logo: "" },
@@ -233,6 +233,22 @@ window.PROJECTS = [
     links: [],
   },
   {
+    id: "vehicle-destruction",
+    title: "Vehicle Destruction System",
+    summary: "City Sample destruction customised to work on custom vehicle models.",
+    tags: ["physics", "destruction", "control rig"],
+    software: ["UE5"],
+    categories: ["shaders"],
+    year: "REPLACE",
+    video: "assets/media/destruction.mp4",
+    poster: "assets/media/destruction.jpg",
+    highlights: ["Built on Unreal's City Sample destruction", "Authored modelling guidelines for the design team", "Customised the Control Rig and Physics Assets for custom models"],
+    breakdown: [
+      { heading: "Overview", body: "I customised Unreal's City Sample destruction system to work on custom models. I authored how assets should be modelled for the design team, and customised the Control Rig and Physics Assets so the destruction works on those models." },
+    ],
+    links: [],
+  },
+  {
     id: "fairuz",
     title: "Fairuz",
     summary: "Custom stylised post-process shader with Substrate materials and a '90s CRT screen.",
@@ -304,12 +320,29 @@ window.PROJECTS = [
       { label: "ArtStation", url: "https://www.artstation.com/artwork/0lKXXV" },
     ],
   },
+  {
+    id: "rexy-wheels",
+    title: "Rexy Wheels for Unreal",
+    summary: "Updated the Rexy Wheels camera-control plugin for a newer Unreal and mapped the hardware's extra buttons.",
+    tags: ["virtual production", "tools", "camera"],
+    software: ["UE5", "C++"],
+    categories: ["pipeline"],
+    year: "REPLACE",
+    video: "assets/media/rexy-wheels.mp4",
+    poster: "assets/media/rexy-wheels.jpg",
+    highlights: ["Packaged the plugin for a newer Unreal Engine version", "Mapped the hardware's extra buttons", "Added zoom, pan, tilt and move functions"],
+    breakdown: [
+      { heading: "Overview", body: "I packaged the Rexy Wheels plugin into a newer version of Unreal Engine and updated its functions to map the extra buttons on the hardware, adding zoom, pan, tilt and move." },
+    ],
+    links: [],
+  },
 ];
 
 window.EXPERIENCE = [
   {
     role: "Technical Artist",
     company: "Foster + Partners",
+    logo: "assets/logos/companies/foster-partners.png",
     location: "London, UK",
     period: "Feb 2025 – present",
     points: [
@@ -324,6 +357,7 @@ window.EXPERIENCE = [
   {
     role: "Technical Artist",
     company: "Tech Amulets",
+    logo: "assets/logos/companies/tech-amulets.png",
     location: "Dubai, UAE",
     period: "Sep 2023 – Feb 2025<br>part-time remote: Dec 2025 – Jun 2026",
     points: [
@@ -337,6 +371,7 @@ window.EXPERIENCE = [
   {
     role: "3D Engineer",
     company: "SimLab Soft",
+    logo: "assets/logos/companies/simlab.png",
     location: "Amman, Jordan",
     period: "Jul 2023 – Sep 2023",
     points: [
@@ -347,6 +382,7 @@ window.EXPERIENCE = [
   {
     role: "3D Generalist",
     company: "Gen AI Con (Generative AI Media, Marketing & Creative Conference)",
+    logo: "assets/logos/companies/genaicon.png",
     location: "London, UK",
     period: "Feb 2023 – Jun 2023",
     points: [
@@ -357,6 +393,7 @@ window.EXPERIENCE = [
   {
     role: "3D Generalist",
     company: "Move.ai",
+    logo: "assets/logos/companies/moveai.png",
     location: "London, UK",
     period: "Jul 2022 – Feb 2023",
     points: [
@@ -367,8 +404,9 @@ window.EXPERIENCE = [
   {
     role: "3D Generalist & Game Designer",
     company: "Fernvaille",
+    logo: "assets/logos/companies/fernvaille.png",
     location: "Istanbul, Türkiye",
     period: "Oct 2021 – Feb 2022",
-    points: ["REPLACE"],
+    points: ["Worked on an indie Unreal Engine title as a 3D generalist and game designer"],
   },
 ];

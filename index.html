@@ -40,15 +40,17 @@
         <div class="cap"><h2>${p.label}</h2><div class="mini">${p.tags.map(cap).join(" · ")}</div></div>
       </a>`).join("");
 
-    // hover tray
+    // hover tray: vertical 2-column bar of moving thumbnails under the hovered panel
+    const stageInner = document.querySelector(".stage-inner");
     const tray = document.getElementById("tray"), track = document.getElementById("track");
+    const touch = matchMedia("(hover: none)").matches;
     let hideT, current = null;
     const thumb = p => `
       <a class="thumb" href="project.html?id=${p.id}">
         <div class="frame">${p.video ? `<video src="${p.video}" muted loop playsinline autoplay preload="metadata"></video>` : p.poster ? `<img src="${p.poster}" alt="" loading="lazy">` : '<div class="ph"></div>'}</div>
         <span>// ${p.title}</span>
       </a>`;
-    function openTray(cat) {
+    function openTray(cat, panelEl) {
       clearTimeout(hideT);
       if (current === cat) return;
       current = cat;
@@ -57,24 +59,55 @@
       track.innerHTML = list.map(thumb).join("");
       tray.style.setProperty("--c", panel.color);
       el.style.setProperty("--c", panel.color);
-      // scroll like a marquee when the row is wider than the tray
+      // position under the hovered panel, lift the row if there isn't room below
+      stageInner.style.transform = "";
+      const inner = stageInner.getBoundingClientRect(), r = panelEl.getBoundingClientRect();
+      const capBottom = panelEl.querySelector(".cap").getBoundingClientRect().bottom;
+      const wanted = 240, bottomLimit = innerHeight - 80, topLimit = 110;
+      let below = bottomLimit - (capBottom + 18);
+      let lift = Math.max(0, Math.min(wanted - below, r.top - topLimit));
+      const h = Math.max(140, Math.min(wanted, below + lift));
+      tray.style.height = h + "px";
+      tray.style.left = (r.left + r.width / 2 - inner.left) + "px";
+      tray.style.top = (capBottom + 18 - inner.top) + "px";
+      stageInner.style.transform = `translateY(${-lift}px)`;
       track.classList.remove("scroll");
       requestAnimationFrame(() => {
-        if (track.scrollWidth > tray.clientWidth) {
+        if (track.scrollHeight > h) {
           track.innerHTML += list.map(thumb).join("");
-          track.style.setProperty("--dur", `${list.length * 4}s`);
+          track.style.setProperty("--dur", `${Math.ceil(list.length / 2) * 5}s`);
           track.classList.add("scroll");
         }
       });
       tray.classList.add("open");
     }
-    function closeTray() { hideT = setTimeout(() => { tray.classList.remove("open"); current = null; }, 300); }
-    el.querySelectorAll(".panel").forEach(a => {
-      a.addEventListener("mouseenter", () => openTray(a.dataset.cat));
-      a.addEventListener("mouseleave", closeTray);
-    });
-    tray.addEventListener("mouseenter", () => clearTimeout(hideT));
-    tray.addEventListener("mouseleave", closeTray);
+    function closeTray() {
+      hideT = setTimeout(() => { tray.classList.remove("open"); stageInner.style.transform = ""; current = null; }, 300);
+    }
+
+    if (!touch) {
+      el.querySelectorAll(".panel").forEach(a => {
+        a.addEventListener("mouseenter", () => openTray(a.dataset.cat, a));
+        a.addEventListener("mouseleave", closeTray);
+      });
+      tray.addEventListener("mouseenter", () => clearTimeout(hideT));
+      tray.addEventListener("mouseleave", closeTray);
+    } else {
+      // phones: first tap shows that category's projects under the card, second tap opens the category
+      el.querySelectorAll(".panel").forEach(a => {
+        const box = document.createElement("div");
+        box.className = "m-thumbs";
+        a.after(box);
+        a.addEventListener("click", e => {
+          if (a.classList.contains("expanded")) return;
+          e.preventDefault();
+          el.querySelectorAll(".panel.expanded").forEach(x => { x.classList.remove("expanded"); x.nextElementSibling.innerHTML = ""; });
+          a.classList.add("expanded");
+          box.style.setProperty("--c", a.style.getPropertyValue("--c"));
+          box.innerHTML = PROJECTS.filter(p => p.categories.includes(a.dataset.cat)).map(thumb).join("");
+        });
+      });
+    }
 
     document.getElementById("tools").innerHTML = SITE.tools.map(t => `<span class="tool" title="${t.name}">${t.logo ? `<img src="${t.logo}" alt="${t.name}">` : t.name}</span>`).join("");
 

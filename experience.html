@@ -21,7 +21,7 @@
         <div class="when">${j.period}<br>${j.location}</div>
         <div>
           <h3>${j.role}</h3>
-          <div class="co">${j.company}</div>
+          <div class="co">${j.logo ? `<img class="co-logo" src="${j.logo}" alt="">` : ""}${j.company}</div>
           <ul>${j.points.map(x => `<li>${x}</li>`).join("")}</ul>
         </div>
       </div>`).join("");
