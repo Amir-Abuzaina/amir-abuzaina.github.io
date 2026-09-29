@@ -22,7 +22,7 @@
       document.title = `${p.title} | ${SITE.name}`;
       el.innerHTML = `
         <a class="back" href="portfolio.html">&lt; back to portfolio</a>
-        <div class="frame ${p.aspect === "9:16" ? "vertical" : ""}">${mediaHTML(p)}</div>
+        <div class="frame ${p.aspect === "9:16" ? "vertical" : ""}">${mediaHTML(p, true)}</div>
         <div class="proj-head">
           <h1>${p.title}</h1>
           <p>${p.summary}</p>

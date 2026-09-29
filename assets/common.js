@@ -29,13 +29,17 @@
   document.body.append(social);
 })();
 
+// Smaller copies for thumbnails/panels: assets/media/sm (960px) and assets/media/xs (480px), made from the full clip.
+const vsrc = (v, size) => v && v.startsWith("assets/media/") ? v.replace("assets/media/", `assets/media/${size}/`) : v;
+// ArtStation images come in sizes; use a smaller one for thumbnails.
+const isrc = (u, size) => u && u.includes("artstation.com") ? u.replace("/large/", `/${size}/`) : u;
 const cap = t => t.charAt(0).toUpperCase() + t.slice(1);
 const CATEGORIES = { art: "art", shaders: "technical", pipeline: "pipeline & production" };
 
 // Media element for a project: video loop if given, else poster, else placeholder.
-function mediaHTML(p) {
+function mediaHTML(p, full) {
   if (p.video) {
-    return `<video src="${p.video}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata"></video>`;
+    return `<video src="${full ? p.video : vsrc(p.video, "sm")}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata"></video>`;
   }
   if (p.poster) return `<img src="${p.poster}" alt="${p.title}" loading="lazy">`;
   return `<div class="ph">[ VIDEO LOOP ]</div>`;
