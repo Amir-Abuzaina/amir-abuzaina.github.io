@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project | Amir Abuzaina</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <main class="page" id="p"></main>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/common.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get("id");
+    const p = PROJECTS.find(x => x.id === id);
+    const el = document.getElementById("p");
+    if (!p) {
+      el.innerHTML = `<a class="back" href="portfolio.html">&lt; back to portfolio</a><p>Project not found.</p>`;
+    } else {
+      document.title = `${p.title} | ${SITE.name}`;
+      el.innerHTML = `
+        <a class="back" href="portfolio.html">&lt; back to portfolio</a>
+        <div class="frame">${mediaHTML(p, true)}</div>
+        <div class="proj-head">
+          <h1>${p.title}</h1>
+          <p>${p.summary}</p>
+          <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}${p.year ? `<span>${p.year}</span>` : ""}</div>
+        </div>
+        <ul class="highlights">${p.highlights.map(h => `<li>${h}</li>`).join("")}</ul>
+        <div class="breakdown">${p.breakdown.map(b => `<h2>${b.heading}</h2><p>${b.body}</p>${b.code ? `<pre><code>${b.code.replace(/</g, "&lt;")}</code></pre>` : ""}${b.image ? `<div class="frame" style="margin-top:14px"><img src="${b.image}" alt=""></div>` : ""}`).join("")}</div>
+        <div class="proj-links">${(p.links || []).filter(l => l.url).map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join("")}</div>`;
+    }
+  </script>
+</body>
+</html>
