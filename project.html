@@ -26,7 +26,7 @@
         <div class="proj-head">
           <h1>${p.title}</h1>
           <p>${p.summary}</p>
-          <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+          <div class="tags">${p.tags.map(t => `<span>${cap(t)}</span>`).join("")}</div>
           <div class="software">${[...(p.software || []), p.year].filter(Boolean).join(" · ")}</div>
         </div>
         <ul class="highlights">${p.highlights.map(h => `<li>${h}</li>`).join("")}</ul>

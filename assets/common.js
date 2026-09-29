@@ -12,8 +12,8 @@
       <div class="tag">${S.tagline}</div>
     </a>
     <nav class="nav">
-      <a href="portfolio.html" class="${here.startsWith("portfolio") || here.startsWith("project") ? "active" : ""}">portfolio_</a>
-      <a href="experience.html" class="${here.startsWith("experience") ? "active" : ""}">experience_</a>
+      <a href="portfolio.html" class="${here.startsWith("portfolio") || here.startsWith("project") ? "active" : ""}">Portfolio</a>
+      <a href="experience.html" class="${here.startsWith("experience") ? "active" : ""}">Experience</a>
     </nav>`;
   document.body.prepend(top);
 
@@ -29,7 +29,8 @@
   document.body.append(social);
 })();
 
-const CATEGORIES = { art: "art", shaders: "shaders & performance", pipeline: "pipeline & production" };
+const cap = t => t.charAt(0).toUpperCase() + t.slice(1);
+const CATEGORIES = { art: "art", shaders: "technical", pipeline: "pipeline & production" };
 
 // Media element for a project: video loop if given, else poster, else placeholder.
 function mediaHTML(p) {

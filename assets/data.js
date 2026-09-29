@@ -7,11 +7,20 @@ window.SITE = {
   // Landing page panels (left → right). video: same shot, different layer per panel.
   panels: [
     { id: "art", label: "Art", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
-    { id: "shaders", label: "Shaders & Performance", tags: ["rendering", "shaders", "optimization"], video: "" },
+    { id: "shaders", label: "Technical", tags: ["rendering", "shaders", "optimization"], video: "" },
     { id: "pipeline", label: "Pipeline & Production", tags: ["tools", "workflows", "virtual production"], video: "" },
   ],
-  // Bottom strip. Swap names for SVG logos later.
-  tools: ["Unreal Engine", "Houdini", "Blender", "Substance Designer", "Photoshop", "HLSL", "C++", "AI workflows (2D/3D)"],
+  // Bottom strip. logo: path to an SVG/PNG in assets/logos/ (white or transparent works best). No logo = name shown as text.
+  tools: [
+    { name: "Unreal Engine", logo: "assets/logos/unrealengine.svg" },
+    { name: "Houdini", logo: "assets/logos/houdini.svg" },
+    { name: "Blender", logo: "assets/logos/blender.svg" },
+    { name: "Substance Designer", logo: "" },
+    { name: "Photoshop", logo: "" },
+    { name: "C++", logo: "assets/logos/cplusplus.svg" },
+    { name: "HLSL", logo: "" },
+    { name: "AI workflows (2D/3D)", logo: "" },
+  ],
   name: "Amir Abuzaina",
   tagline: "technical artist, graphics",
   links: {

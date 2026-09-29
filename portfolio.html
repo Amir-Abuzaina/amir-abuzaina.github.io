@@ -27,7 +27,7 @@
           <div class="frame">${mediaHTML(p)}</div>
           <div class="card-meta">
             <h3>${p.title}</h3>
-            <div class="tags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+            <div class="tags">${p.tags.map(t => `<span>${cap(t)}</span>`).join("")}</div>
             <p>${p.summary}</p>
           </div>
         </a>`).join("");
