@@ -4,19 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Amir Abuzaina</title>
-  <meta name="description" content="Amir Abuzaina: technical artist, rendering and tools.">
+  <meta name="description" content="Amir Abuzaina: technical artist, graphics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="home">
-  <!-- PLACEHOLDER LANDING: interactive dot field. Replace later with the bunny / sphere / teapot scene. -->
+  <!-- background: interactive dot field -->
   <canvas id="field"></canvas>
-  <div class="landing-note">// work in progress</div>
+
+  <!-- centre: three discipline panels joined by bridges -->
+  <section class="stage"><div class="panels" id="panels"></div></section>
+
+  <!-- bottom: tools -->
+  <div class="toolstrip" id="tools"></div>
 
   <script src="assets/data.js"></script>
   <script src="assets/common.js"></script>
   <script>
+    // panels
+    const el = document.getElementById("panels");
+    el.innerHTML = SITE.panels.map((p, i) => `
+      ${i ? '<div class="bridge"></div>' : ""}
+      <a class="panel" href="portfolio.html?cat=${p.id}">
+        <span class="num">0${i + 1}</span>
+        <div class="frame">${p.video ? `<video src="${p.video}" muted loop playsinline autoplay preload="auto"></video>` : '<div class="ph">[ LOOP ]</div>'}</div>
+        <div class="cap"><h2>${p.label}</h2><div class="mini">${p.tags.join(" · ")}</div></div>
+      </a>`).join("");
+    document.getElementById("tools").innerHTML = SITE.tools.map(t => `<span>${t}</span>`).join("");
+
+    // dot field
     const c = document.getElementById("field"), g = c.getContext("2d");
     let W, H, dots = [], mouse = { x: -9999, y: -9999 };
     const GAP = 26, R = 120;
