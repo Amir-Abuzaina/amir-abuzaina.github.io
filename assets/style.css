@@ -138,3 +138,8 @@ body:not(.home) .top { background: linear-gradient(var(--bg) 70%, transparent); 
 .toolstrip .tool { display: flex; align-items: center; gap: 8px; opacity: .55; transition: opacity .2s; }
 .toolstrip .tool:hover { opacity: 1; }
 .toolstrip img { height: 22px; width: auto; filter: invert(1); }
+
+/* per-category filter colour (set from SITE.panels[].color) */
+.filters button:hover, .filters button.on { border-color: var(--c, var(--accent)); color: var(--c, var(--accent)); }
+.gallery { display: grid; gap: 24px; margin: 40px 0; }
+.toolstrip .tool:not(:has(img)) { border: 1px solid var(--line); padding: 3px 9px; font-size: 11px; }
