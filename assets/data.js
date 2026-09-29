@@ -5,10 +5,10 @@
 
 window.SITE = {
   name: "Amir Abuzaina",
-  tagline: "technical artist // rendering + tools",
+  tagline: "Technical artist //Asprining Graphics Programmer",
   links: {
-    linkedin: "https://www.linkedin.com/in/REPLACE",
-    artstation: "https://www.artstation.com/REPLACE",
+    linkedin: "https://www.linkedin.com/in/amir-abuzaina-53a51a21a/",
+    artstation: "https://www.artstation.com/amirabuzaina",
   },
 };
 
