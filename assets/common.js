@@ -32,8 +32,8 @@
 // Media element for a project: video loop if given, else poster, else placeholder.
 function mediaHTML(p, autoplay) {
   if (p.video) {
-    return `<video src="${p.video}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata" ${autoplay ? "autoplay" : ""}></video>`;
+    return `<video class="${p.fit === "contain" ? "contain" : ""}" src="${p.video}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata" ${autoplay ? "autoplay" : ""}></video>`;
   }
-  if (p.poster) return `<img src="${p.poster}" alt="${p.title}" loading="lazy">`;
+  if (p.poster) return `<img class="${p.fit === "contain" ? "contain" : ""}" src="${p.poster}" alt="${p.title}" loading="lazy">`;
   return `<div class="ph">[ 16:9 VIDEO LOOP ]</div>`;
 }

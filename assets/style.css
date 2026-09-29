@@ -84,3 +84,4 @@ a:hover { color: var(--accent); }
   .landing-note { left: 16px; bottom: 16px; }
 }
 body:not(.home) .top { background: linear-gradient(var(--bg) 70%, transparent); padding-bottom: 40px; }
+.frame video.contain, .frame img.contain { object-fit: contain; background: #000; }
