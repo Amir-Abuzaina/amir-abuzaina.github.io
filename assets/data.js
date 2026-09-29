@@ -15,7 +15,7 @@ window.SITE = {
     { name: "Unreal Engine", logo: "assets/logos/unrealengine.svg" },
     { name: "Houdini", logo: "assets/logos/houdini.svg" },
     { name: "Blender", logo: "assets/logos/blender.svg" },
-    { name: "Substance Designer", logo: "" },
+    { name: "Substance Designer", logo: "assets/logos/substance-designer.png" },
     { name: "Photoshop", logo: "assets/logos/photoshop.svg" },
     { name: "C++", logo: "assets/logos/cplusplus.svg" },
     { name: "HLSL", logo: "" },

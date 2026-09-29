@@ -48,7 +48,7 @@
     const thumb = p => `
       <a class="thumb" href="project.html?id=${p.id}">
         <div class="frame">${p.video ? `<video src="${p.video}" muted loop playsinline autoplay preload="metadata"></video>` : p.poster ? `<img src="${p.poster}" alt="" loading="lazy">` : '<div class="ph"></div>'}</div>
-        <span>// ${p.title}</span>
+        <span>${p.title}</span>
       </a>`;
     function openTray(cat, panelEl) {
       clearTimeout(hideT);
@@ -59,17 +59,26 @@
       track.innerHTML = list.map(thumb).join("");
       tray.style.setProperty("--c", panel.color);
       el.style.setProperty("--c", panel.color);
-      // position under the hovered panel, lift the row if there isn't room below
+      // position from layout offsets (not getBoundingClientRect) so the hover scale-up can't skew it
       stageInner.style.transform = "";
-      const inner = stageInner.getBoundingClientRect(), r = panelEl.getBoundingClientRect();
-      const capBottom = panelEl.querySelector(".cap").getBoundingClientRect().bottom;
-      const wanted = 240, bottomLimit = innerHeight - 80, topLimit = 110;
-      let below = bottomLimit - (capBottom + 18);
-      let lift = Math.max(0, Math.min(wanted - below, r.top - topLimit));
+      const SCALE = 1.07, cap = panelEl.querySelector(".cap");
+      const pTop = panelEl.offsetTop, pH = panelEl.offsetHeight, cy = pTop + pH / 2;
+      const capBottom = cy + (pTop + cap.offsetTop + cap.offsetHeight - cy) * SCALE;
+      const innerTop = stageInner.parentElement.getBoundingClientRect().top + stageInner.offsetTop; // untransformed
+      const wanted = 300, gap = 18, bottomLimit = innerHeight - 80, topLimit = 110;
+      const below = bottomLimit - (innerTop + capBottom + gap);
+      const panelTopScreen = innerTop + cy - (pH / 2) * SCALE;
+      const lift = Math.max(0, Math.min(Math.max(wanted - below, 100), panelTopScreen - topLimit)); // always lift at least 100px
       const h = Math.max(140, Math.min(wanted, below + lift));
       tray.style.height = h + "px";
-      tray.style.left = (r.left + r.width / 2 - inner.left) + "px";
-      tray.style.top = (capBottom + 18 - inner.top) + "px";
+      // bridges stretch on hover and nudge the panels sideways, so track the panel centre while that settles
+      const follow = t0 => { const step = t => {
+        const pr = panelEl.getBoundingClientRect(), ir = stageInner.getBoundingClientRect();
+        tray.style.left = (pr.left + pr.width / 2 - ir.left) + "px";
+        if (t - t0 < 600 && current === cat) requestAnimationFrame(step); };
+        requestAnimationFrame(step); };
+      follow(performance.now());
+      tray.style.top = (capBottom + gap) + "px";
       stageInner.style.transform = `translateY(${-lift}px)`;
       track.classList.remove("scroll");
       requestAnimationFrame(() => {
