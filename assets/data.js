@@ -7,7 +7,7 @@ window.SITE = {
   // Landing page panels (left → right). video: same shot, different layer per panel.
   panels: [
     { id: "art", label: "Art", color: "#ED4305", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
-    { id: "shaders", label: "Technical", color: "#ED7E00", tags: ["rendering", "shaders", "optimization"], video: "" },
+    { id: "shaders", label: "Technical", color: "#33987F", tags: ["rendering", "shaders", "optimization"], video: "" },
     { id: "pipeline", label: "Pipeline & Production", color: "#ED7E00", tags: ["tools", "workflows", "virtual production"], video: "" },
   ],
   // Bottom strip. logo: path to an SVG/PNG in assets/logos/ (white or transparent works best). No logo = name shown as text.
@@ -60,6 +60,7 @@ window.PROJECTS = [
     year: "2025",
     video: "",
     poster: "https://cdnb.artstation.com/p/assets/images/images/090/105/231/large/amir-abuzaina-ls-maintest-0919.jpg",
+    gallery: ["https://cdna.artstation.com/p/assets/images/images/090/105/182/large/amir-abuzaina-ls-fur-0066.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/212/large/amir-abuzaina-highresscreenshot00020.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/216/large/amir-abuzaina-highresscreenshot00021.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/222/large/amir-abuzaina-highresscreenshot00022.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/226/large/amir-abuzaina-highresscreenshot00023.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/228/large/amir-abuzaina-highresscreenshot00024.jpg"],
     highlights: [
       "Physical cameras and physically based lighting",
       "MetaHuman with built-in motion capture",
@@ -81,6 +82,7 @@ window.PROJECTS = [
     video: "assets/media/crows-of-surrender.mp4",
     poster: "assets/media/crows-of-surrender.jpg",
     aspect: "9:16", // vertical (social media) piece
+    gallery: ["https://cdnb.artstation.com/p/assets/images/images/100/008/879/large/amir-abuzaina-0000v005.webp", "https://cdna.artstation.com/p/assets/images/images/100/008/948/large/amir-abuzaina-0000v002.webp", "https://cdnb.artstation.com/p/assets/images/images/100/009/301/large/amir-abuzaina-ss1.webp", "https://cdnb.artstation.com/p/assets/images/images/100/009/343/large/amir-abuzaina-highresscreenshot00001.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/392/large/amir-abuzaina-highresscreenshot00002.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/408/large/amir-abuzaina-highresscreenshot00003.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/132/large/amir-abuzaina-samuel-chovan-newlevelsequence-0000-00001.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/134/large/amir-abuzaina-samuel-chovan-newlevelsequence-0000-00000.webp"],
     highlights: ["Physically based lighting values", "Physical cameras", "Correct PBR ranges"],
     breakdown: [
       { heading: "Overview", body: "Lumen lighting render in Unreal Engine 5, using physically based lighting values with physical cameras and correct PBR ranges." },
@@ -97,6 +99,7 @@ window.PROJECTS = [
     year: "2024",
     video: "",
     poster: "https://cdna.artstation.com/p/assets/videos/images/079/616/258/large/amir-abuzaina-hqdefault.jpg",
+    gallery: ["https://cdnb.artstation.com/p/assets/images/images/079/616/275/large/amir-abuzaina-highresscreenshot00007.jpg", "https://cdnb.artstation.com/p/assets/images/images/079/616/371/large/amir-abuzaina-highresscreenshot00008.jpg", "https://cdnb.artstation.com/p/assets/images/images/079/616/403/large/amir-abuzaina-highresscreenshot00000.jpg", "https://cdna.artstation.com/p/assets/images/images/079/616/422/large/amir-abuzaina-highresscreenshot00002.jpg", "https://cdnb.artstation.com/p/assets/images/images/079/616/459/large/amir-abuzaina-highresscreenshot00004.jpg"],
     highlights: ["Cinematic light study", "Tweaked light scattering on the water simulation"],
     breakdown: [
       { heading: "Overview", body: "A cinematic showcasing a light study and environment in Unreal Engine 5. The water simulation workflow is by DeathreyCG; I tweaked the light scattering and other attributes." },
@@ -111,8 +114,9 @@ window.PROJECTS = [
     software: ["UE5"],
     categories: ["art"],
     year: "2025",
-    video: "",
-    poster: "https://cdnb.artstation.com/p/assets/covers/images/085/541/193/large/amir-abuzaina-cover.jpg",
+    video: "assets/media/dead-walking.mp4",
+    poster: "assets/media/dead-walking.jpg",
+    gallery: ["https://cdna.artstation.com/p/assets/images/images/085/541/194/large/amir-abuzaina-asset.jpg", "https://cdna.artstation.com/p/assets/images/images/085/541/196/large/amir-abuzaina-asset.jpg"],
     highlights: [
       "Custom animation system that procedurally matches poses",
       "Physically simulated hit reactions instead of baked animations",
@@ -135,6 +139,7 @@ window.PROJECTS = [
     year: "2024",
     video: "",
     poster: "https://cdna.artstation.com/p/assets/images/images/082/319/558/large/amir-abuzaina-ls-foster2-000222.jpg",
+    gallery: ["https://cdna.artstation.com/p/assets/images/images/082/319/564/large/amir-abuzaina-highresscreenshot00007.jpg", "https://cdna.artstation.com/p/assets/images/images/082/319/582/large/amir-abuzaina-highresscreenshot00006.jpg"],
     highlights: [
       "Spot and point lights to shape god rays through volumetric fog",
       "Contrast between left and right sides of the scene",
@@ -146,6 +151,51 @@ window.PROJECTS = [
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dyQmdA" }],
   },
   {
+    id: "trees",
+    title: "REPLACE: tree project name",
+    summary: "REPLACE: one line on the tree project.",
+    tags: ["lighting", "foliage"],
+    software: ["UE5"],
+    categories: ["art"],
+    year: "2026",
+    video: "assets/media/trees.mp4",
+    poster: "assets/media/trees.jpg",
+    gallery: ["assets/media/trees-still-1.jpg", "assets/media/trees-still-2.jpg"],
+    highlights: ["REPLACE"],
+    breakdown: [{ heading: "Overview", body: "REPLACE" }],
+    links: [],
+  },
+  {
+    id: "maryticide",
+    title: "Maryticide",
+    summary: "Point-and-click game prototype.",
+    tags: ["game prototype", "lighting", "gameplay"],
+    software: ["UE5"],
+    categories: ["art"],
+    year: "REPLACE",
+    video: "assets/media/maryticide.mp4",
+    poster: "assets/media/maryticide.jpg",
+    gallery: [],
+    highlights: ["REPLACE"],
+    breakdown: [{ heading: "Overview", body: "REPLACE" }],
+    links: [],
+  },
+  {
+    id: "western-short",
+    title: "REPLACE: animation name",
+    summary: "Short animation.",
+    tags: ["animation", "lighting"],
+    software: ["UE5"],
+    categories: ["art"],
+    year: "REPLACE",
+    video: "assets/media/western-short.mp4",
+    poster: "assets/media/western-short.jpg",
+    gallery: [],
+    highlights: ["REPLACE"],
+    breakdown: [{ heading: "Overview", body: "REPLACE" }],
+    links: [],
+  },
+  {
     id: "procedural-pom",
     title: "Performant Procedural Parallax Occlusion Interior Mapping",
     summary: "Atlas-driven POM interiors across thousands of instances in a single draw call.",
@@ -155,6 +205,7 @@ window.PROJECTS = [
     year: "2025",
     video: "",
     poster: "https://cdnb.artstation.com/p/assets/images/images/099/542/893/large/amir-abuzaina-highresscreenshot00003.webp",
+    gallery: ["https://cdnb.artstation.com/p/assets/images/images/099/542/895/large/amir-abuzaina-highresscreenshot00004.webp", "https://cdnb.artstation.com/p/assets/images/images/099/542/901/large/amir-abuzaina-highresscreenshot00005.webp", "https://cdna.artstation.com/p/assets/images/images/094/954/226/large/amir-abuzaina-highresscreenshot00002.webp", "https://cdnb.artstation.com/p/assets/images/images/094/954/229/large/amir-abuzaina-highresscreenshot00003.webp", "https://cdna.artstation.com/p/assets/images/images/094/954/238/large/amir-abuzaina-screenshot-2025-12-30-130822.webp", "https://cdnb.artstation.com/p/assets/images/images/094/954/239/large/amir-abuzaina-screenshot-2025-12-30-131104.webp", "https://cdnb.artstation.com/p/assets/images/images/094/954/245/large/amir-abuzaina-screenshot-2025-12-30-131002.webp", "https://cdna.artstation.com/p/assets/images/images/094/954/248/large/amir-abuzaina-screenshot-2025-12-30-130921.webp", "https://cdna.artstation.com/p/assets/images/images/094/954/252/large/amir-abuzaina-screenshot-2025-12-30-130855.webp"],
     highlights: [
       "Remapped ParallaxOcclusionMapping to sample regions of a texture atlas",
       "Per-instance variation via Custom Primitive Data, similar to City Sample",
@@ -176,8 +227,9 @@ window.PROJECTS = [
     software: ["UE5", "Substance Designer", "Blender"],
     categories: ["shaders"],
     year: "2025",
-    video: "",
-    poster: "https://cdnb.artstation.com/p/assets/video_clips/images/089/518/895/medium/amir-abuzaina-thumb.jpg",
+    video: "assets/media/fairuz.mp4",
+    poster: "assets/media/fairuz.jpg",
+    gallery: ["https://cdna.artstation.com/p/assets/images/images/089/518/936/large/amir-abuzaina-ls-masterroot-0019.jpg", "https://cdna.artstation.com/p/assets/images/images/089/518/944/large/amir-abuzaina-ls-masterroot-0158.jpg", "https://cdnb.artstation.com/p/assets/images/images/089/518/961/large/amir-abuzaina-ls-masterroot-0010.jpg", "https://cdnb.artstation.com/p/assets/images/images/089/518/963/large/amir-abuzaina-ls-masterroot-0200.jpg", "https://cdnb.artstation.com/p/assets/images/images/089/519/095/large/amir-abuzaina-popcorncieling.jpg", "https://cdnb.artstation.com/p/assets/images/images/089/519/129/large/amir-abuzaina-mat2wip.jpg", "https://cdnb.artstation.com/p/assets/images/images/089/519/097/large/amir-abuzaina-wallswornout.jpg", "https://cdnb.artstation.com/p/assets/images/images/089/519/091/large/amir-abuzaina-mat-wip.jpg", "https://cdna.artstation.com/p/assets/images/images/089/519/136/large/amir-abuzaina-screenshot-2025-06-29-141034.jpg", "https://cdnb.artstation.com/p/assets/images/images/089/519/183/large/amir-abuzaina-highresscreenshot00024.jpg"],
     highlights: [
       "Custom post-process: light/shadow quantization, HSV handling, edge detection",
       "Wall and ceiling materials built in Substance Designer",
@@ -201,6 +253,7 @@ window.PROJECTS = [
     year: "2022",
     video: "",
     poster: "https://cdna.artstation.com/p/assets/covers/images/051/037/648/large/arkadukex-arkadukex-highresscreenshot00004.jpg",
+    gallery: ["https://cdnb.artstation.com/p/assets/images/images/051/037/343/large/arkadukex-screenshot00015.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/380/large/arkadukex-highresscreenshot00003.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/347/large/arkadukex-screenshot00016.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/392/large/arkadukex-highresscreenshot00005.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/359/large/arkadukex-screenshot00018.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/371/large/arkadukex-highresscreenshot00002.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/385/large/arkadukex-highresscreenshot00004.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/394/large/arkadukex-highresscreenshot00006.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/408/large/arkadukex-highresscreenshot00009.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/415/large/arkadukex-highresscreenshot00010.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/418/large/arkadukex-highresscreenshot00011.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/424/large/arkadukex-screenshot00008.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/430/large/arkadukex-screenshot00010.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/433/large/arkadukex-screenshot00011.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/437/large/arkadukex-screenshot00012.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/452/large/arkadukex-screenshot00014.jpg"],
     highlights: [
       "Inventory, interaction and puzzle systems in Blueprints",
       "Ocean shader based on the Gerstner wave model",
@@ -221,6 +274,7 @@ window.PROJECTS = [
     year: "2025",
     video: "",
     poster: "https://cdna.artstation.com/p/assets/images/images/099/934/274/large/amir-abuzaina-mainthumbnail.webp",
+    gallery: ["https://cdnb.artstation.com/p/assets/images/images/099/959/565/large/amir-abuzaina-l.webp", "https://cdna.artstation.com/p/assets/images/images/099/934/272/large/amir-abuzaina-1.webp", "https://cdna.artstation.com/p/assets/images/images/099/959/550/large/amir-abuzaina-a.webp", "https://cdna.artstation.com/p/assets/images/images/099/934/276/large/amir-abuzaina-6.webp", "https://cdna.artstation.com/p/assets/images/images/099/959/556/large/amir-abuzaina-e.webp", "https://cdnb.artstation.com/p/assets/images/images/099/959/553/large/amir-abuzaina-d.webp", "https://cdna.artstation.com/p/assets/images/images/099/959/552/large/amir-abuzaina-c.webp", "https://cdnb.artstation.com/p/assets/images/images/099/934/279/large/amir-abuzaina-4.webp", "https://cdnb.artstation.com/p/assets/images/images/099/959/559/large/amir-abuzaina-h.webp", "https://cdnb.artstation.com/p/assets/images/images/099/959/561/large/amir-abuzaina-i.webp", "https://cdna.artstation.com/p/assets/images/images/099/959/558/large/amir-abuzaina-g.webp", "https://cdna.artstation.com/p/assets/images/images/099/934/270/large/amir-abuzaina-3.webp", "https://cdnb.artstation.com/p/assets/images/images/099/959/551/large/amir-abuzaina-b.webp", "https://cdnb.artstation.com/p/assets/images/images/099/934/277/large/amir-abuzaina-5.webp", "https://cdna.artstation.com/p/assets/images/images/099/959/564/large/amir-abuzaina-k.webp", "https://cdnb.artstation.com/p/assets/images/images/099/959/563/large/amir-abuzaina-j.webp", "https://cdnb.artstation.com/p/assets/images/images/099/934/271/large/amir-abuzaina-2.webp", "https://cdnb.artstation.com/p/assets/images/images/096/088/693/large/amir-abuzaina-screenshot-2026-02-05-164201.webp", "https://cdnb.artstation.com/p/assets/images/images/096/088/691/large/amir-abuzaina-screenshot-2026-02-05-164059.webp", "https://cdna.artstation.com/p/assets/images/images/096/115/604/original/amir-abuzaina-screenrecording2026-02-06140153-ezgif-com-video-to-gif-converter.gif", "https://cdna.artstation.com/p/assets/images/images/096/110/762/original/amir-abuzaina-screenrecording2026-02-06113719-ezgif-com-video-to-gif-converter.gif", "https://cdna.artstation.com/p/assets/images/images/096/108/552/original/amir-abuzaina-autolod-ezgif-com-optimize.gif", "https://cdnb.artstation.com/p/assets/images/images/096/110/431/original/amir-abuzaina-generatelightmaps-ezgif-com-video-to-gif-converter.gif", "https://cdnb.artstation.com/p/assets/images/images/096/111/719/original/amir-abuzaina-screenrecording2026-02-06120225-ezgif-com-video-to-gif-converter-1.gif", "https://cdna.artstation.com/p/assets/images/images/096/111/984/original/amir-abuzaina-screenrecording2026-02-06121105-ezgif-com-video-to-gif-converter.gif", "https://cdnb.artstation.com/p/assets/images/images/093/836/039/large/amir-abuzaina-screenshot-2025-11-20-174743.webp", "https://cdna.artstation.com/p/assets/images/images/096/115/912/large/amir-abuzaina-screenshot-2026-02-06-141239.webp"],
     highlights: [
       "Started as a Utility Widget Blueprint, ported to a native C++ plugin",
       "Material Whiteboard: bulk-edit parameters across many materials",
