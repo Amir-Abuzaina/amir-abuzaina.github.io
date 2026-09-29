@@ -29,11 +29,21 @@
   document.body.append(social);
 })();
 
+const CATEGORIES = { art: "art", shaders: "shaders & performance", pipeline: "pipeline & production" };
+
 // Media element for a project: video loop if given, else poster, else placeholder.
-function mediaHTML(p, autoplay) {
+function mediaHTML(p) {
   if (p.video) {
-    return `<video class="${p.fit === "contain" ? "contain" : ""}" src="${p.video}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata" ${autoplay ? "autoplay" : ""}></video>`;
+    return `<video src="${p.video}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata"></video>`;
   }
-  if (p.poster) return `<img class="${p.fit === "contain" ? "contain" : ""}" src="${p.poster}" alt="${p.title}" loading="lazy">`;
-  return `<div class="ph">[ 16:9 VIDEO LOOP ]</div>`;
+  if (p.poster) return `<img src="${p.poster}" alt="${p.title}" loading="lazy">`;
+  return `<div class="ph">[ VIDEO LOOP ]</div>`;
+}
+
+// Autoplay videos only while they're on screen.
+function autoplayInView(root) {
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) e.target.play().catch(() => {}); else e.target.pause();
+  }), { threshold: 0.25 });
+  (root || document).querySelectorAll("video").forEach(v => io.observe(v));
 }

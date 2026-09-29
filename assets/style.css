@@ -5,10 +5,11 @@
   --text: #d6d3cc;
   --dim: #7b7a75;
   --accent: #d9b25f;
-  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --sans: "Space Grotesk", system-ui, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 15px; line-height: 1.6; }
+html, body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--accent); }
 
@@ -23,7 +24,7 @@ a:hover { color: var(--accent); }
 .nav a::before { content: "> "; color: var(--dim); }
 .nav a.active { color: var(--accent); }
 
-.social { position: fixed; right: 40px; bottom: 28px; z-index: 20; display: flex; gap: 18px; }
+.social { position: fixed; right: 40px; top: 50%; transform: translateY(-50%); z-index: 20; display: flex; flex-direction: column; gap: 22px; }
 .social a { width: 26px; height: 26px; opacity: .6; transition: opacity .2s; }
 .social a:hover { opacity: 1; color: var(--accent); }
 .social svg { width: 100%; height: 100%; fill: currentColor; }
@@ -80,8 +81,55 @@ a:hover { color: var(--accent); }
   .top { flex-direction: column; gap: 14px; padding: 20px 16px; position: absolute; }
   .page { padding: 150px 16px 100px; }
   .job { grid-template-columns: 1fr; gap: 6px; }
-  .social { right: 16px; bottom: 16px; }
+  .social { right: 16px; top: auto; bottom: 16px; transform: none; flex-direction: row; }
   .landing-note { left: 16px; bottom: 16px; }
 }
 body:not(.home) .top { background: linear-gradient(var(--bg) 70%, transparent); padding-bottom: 40px; }
 .frame video.contain, .frame img.contain { object-fit: contain; background: #000; }
+
+/* mono only for small technical labels */
+.brand .tag, .nav, .section-title, .filters button, .tags span, .back, .job .when, .landing-note, .ph, pre, code, .breakdown h2 { font-family: var(--mono); }
+
+/* vertical (9:16) pieces */
+.card.vertical { display: grid; grid-template-columns: minmax(0, 420px) 1fr; gap: 40px; align-items: end; }
+.card.vertical .frame, .frame.vertical { aspect-ratio: 9 / 16; }
+.frame.vertical { max-width: 480px; margin: 0 auto; }
+.card.vertical .card-meta { margin-top: 0; }
+.software { color: var(--dim); font-family: var(--mono); font-size: 12px; margin-top: 10px; }
+
+/* ---------- landing: three panels ---------- */
+.home #field { opacity: .55; }
+.stage { position: fixed; inset: 0; display: grid; place-items: center; z-index: 10; pointer-events: none; }
+.panels { display: flex; align-items: center; pointer-events: auto; }
+.panel { position: relative; width: clamp(200px, 20vw, 300px); aspect-ratio: 3 / 4; display: block;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.panel .frame { aspect-ratio: auto; height: 100%; }
+.panel .frame video { filter: saturate(.85) brightness(.85); transition: filter .45s; }
+.panel:hover { transform: scale(1.07); z-index: 2; }
+.panel:hover .frame { border-color: var(--accent); }
+.panel:hover .frame video { filter: none; }
+.panel .num { position: absolute; top: 12px; left: 14px; font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: 2px; z-index: 1; }
+.panel .cap { position: absolute; left: 0; right: 0; top: calc(100% + 14px); }
+.panel .cap h2 { font-size: 16px; font-weight: 500; letter-spacing: .5px; }
+.panel:hover .cap h2 { color: var(--accent); }
+.panel .cap .mini { font-family: var(--mono); font-size: 11px; color: var(--dim); margin-top: 2px; }
+/* the bridge: a line between panels that stretches when a neighbour is hovered */
+.bridge { width: 28px; height: 1px; background: var(--line); position: relative; transition: width .45s cubic-bezier(.2,.8,.2,1), background .45s; }
+.bridge::before, .bridge::after { content: ""; position: absolute; top: -2px; width: 5px; height: 5px; border-radius: 50%; background: var(--dim); }
+.bridge::before { left: -2px; } .bridge::after { right: -2px; }
+.panels:has(.panel:nth-child(1):hover) .bridge:nth-child(2),
+.panels:has(.panel:nth-child(3):hover) .bridge:nth-child(2),
+.panels:has(.panel:nth-child(3):hover) .bridge:nth-child(4),
+.panels:has(.panel:nth-child(5):hover) .bridge:nth-child(4) { width: 72px; background: var(--accent); }
+
+.toolstrip { position: fixed; left: 0; right: 0; bottom: 28px; z-index: 20; display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 8px 28px; font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: 1px; padding: 0 120px; }
+.toolstrip span:hover { color: var(--text); }
+
+@media (max-width: 900px) {
+  .stage { position: static; padding: 150px 16px 160px; }
+  .panels { flex-direction: column; }
+  .panel { width: min(320px, 80vw); margin-bottom: 70px; }
+  .bridge { width: 1px; height: 28px; margin-bottom: 0; display: none; }
+  .toolstrip { position: static; padding: 0 16px 90px; }
+}
