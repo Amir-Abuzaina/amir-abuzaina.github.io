@@ -3,9 +3,9 @@
 window.SITE = {
   
   panels: [
-    { id: "art", label: "Art", color: "#4536E7", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
-    { id: "shaders", label: "Technical", color: "#E74536", tags: ["rendering", "shaders", "optimization"], video: "assets/media/pom.mp4" },
-    { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["tools", "workflows", "virtual production"], video: "assets/media/vp-camera-rig.mp4" },
+    { id: "art", label: "Art", color: "#4536E7", tags: ["Lighting", "Materials", "Rendering"], video: "assets/media/crows-of-surrender.mp4" },
+    { id: "shaders", label: "Technical", color: "#E74536", tags: ["Shaders", "Optimization", "Systems], video: "assets/media/pom.mp4" },
+    { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["Tools", "Workflows", "Virtual Production"], video: "assets/media/vp-camera-rig.mp4" },
   ],
   
   tools: [
@@ -31,7 +31,7 @@ window.PROJECTS = [
   {
     id: "procedural-pom",
     title: "Performant Procedural Parallax Occlusion Interior Mapping",
-    summary: "Atlas-driven POM interiors across thousands of instances in a single draw call.",
+    summary: "Atlas-driven POM interiors across thousands of options in a single draw call.",
     tags: ["shaders", "optimization", "tools"],
     software: ["UE5", "HLSL"],
     categories: ["shaders"],
@@ -55,29 +55,29 @@ window.PROJECTS = [
   {
     id: "lighting-doodles",
     title: "Lighting Doodle I",
-    summary: "Collection of real-time Lumen lighting studies.",
+    summary: "Real-Time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
     categories: ["art"],
     year: "2026",
     video: "",
     poster: "https://cdnb.artstation.com/p/assets/images/images/100/011/109/large/amir-abuzaina-asset.webp",
-    highlights: ["Real-time rendering with Lumen", "REPLACE", "REPLACE"],
-    breakdown: [{ heading: "Overview", body: "Lumen real-time rendering collection of works in Unreal Engine 5." }],
+    highlights: ["Real time rendering with Lumen"],
+    breakdown: [{ heading: "Overview", body: "Lumen rendering." }],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dLJOyW" }],
   },
   {
     id: "lighting-doodles-2",
     title: "Lighting Doodle II",
-    summary: "Collection of real-time Lumen lighting studies.",
+    summary: "Real-Time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
     categories: ["art"],
     year: "2026",
     video: "",
     poster: "https://cdnb.artstation.com/p/assets/images/images/100/011/113/large/amir-abuzaina-asset.webp",
-    highlights: ["Real-time rendering with Lumen", "REPLACE", "REPLACE"],
-    breakdown: [{ heading: "Overview", body: "Lumen real-time rendering collection of works in Unreal Engine 5." }],
+    highlights: ["Real time rendering with Lumen"],
+    breakdown: [{ heading: "Overview", body: "Lumen rendering." }],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dLJOyW" }],
   },
   {
