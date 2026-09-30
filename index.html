@@ -92,9 +92,10 @@
       });
       tray.classList.add("open");
       document.body.classList.add("lifted");
+      setGlow(panel.color, panelEl);
     }
     function closeTray() {
-      hideT = setTimeout(() => { tray.classList.remove("open"); document.body.classList.remove("lifted"); stageInner.style.transform = ""; current = null; }, 300);
+      hideT = setTimeout(() => { tray.classList.remove("open"); document.body.classList.remove("lifted"); setGlow(null, null); stageInner.style.transform = ""; current = null; }, 300);
     }
 
     if (!touch) {
@@ -126,7 +127,16 @@
     // dot field
     const c = document.getElementById("field"), g = c.getContext("2d");
     let W, H, dots = [], mouse = { x: -9999, y: -9999 };
-    const GAP = 26, R = 120;
+    const GAP = 26, R = 120, HALO = 56;
+    // glow colour follows the hovered card's category colour; a faint halo of dots rings the card
+    const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    const GREEN = [103, 251, 201];
+    let glow = [...GREEN], glowT = [...GREEN], halo = 0, haloT = 0, haloEl = null;
+    function setGlow(color, el) {
+      glowT = color ? hex(color) : [...GREEN];
+      haloT = el ? 1 : 0;
+      if (el) haloEl = el;
+    }
     function build() {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       W = innerWidth; H = innerHeight;
@@ -137,7 +147,11 @@
     }
     function frame(t) {
       g.clearRect(0, 0, W, H);
-      const buckets = Array.from({ length: 8 }, () => new Path2D()), near = [];
+      for (let i = 0; i < 3; i++) glow[i] += (glowT[i] - glow[i]) * 0.14;   // ~0.3s ease
+      halo += (haloT - halo) * 0.12;
+      const rgb = glow.map(Math.round).join(",");
+      const r = halo > 0.01 && haloEl ? haloEl.getBoundingClientRect() : null;
+      const buckets = Array.from({ length: 8 }, () => new Path2D()), near = [], ring = [];
       for (const d of dots) {
         const dx = d.ox - mouse.x, dy = d.oy - mouse.y, dist = Math.hypot(dx, dy);
         if (dist < R || d.x !== d.ox || d.y !== d.oy) {
@@ -147,12 +161,18 @@
           if (Math.abs(d.x - d.ox) < 0.05 && Math.abs(d.y - d.oy) < 0.05 && dist >= R) { d.x = d.ox; d.y = d.oy; }
         }
         if (dist < R) { near.push([d, 1 - dist / R]); continue; }
+        if (r) {
+          const ex = Math.max(r.left - d.x, 0, d.x - r.right), ey = Math.max(r.top - d.y, 0, d.y - r.bottom);
+          const e = Math.hypot(ex, ey);
+          if (e > 0 && e < HALO) { ring.push([d, (1 - e / HALO) * halo]); continue; }
+        }
         const wave = 0.5 + 0.5 * Math.sin(d.ox * 0.01 + d.oy * 0.013 + t * 0.0008);
         const path = buckets[Math.min(7, (wave * 8) | 0)];
         path.moveTo(d.x + 1.2, d.y); path.arc(d.x, d.y, 1.2, 0, 6.283);
       }
       buckets.forEach((path, i) => { g.fillStyle = `rgba(214,211,204,${0.06 + (i / 7) * 0.12})`; g.fill(path); });
-      for (const [d, n] of near) { g.fillStyle = `rgba(103,251,201,${0.25 + n * 0.75})`; g.beginPath(); g.arc(d.x, d.y, 1.2 + n * 1.3, 0, 6.283); g.fill(); }
+      for (const [d, n] of ring) { g.fillStyle = `rgba(${rgb},${0.08 + n * 0.45})`; g.beginPath(); g.arc(d.x, d.y, 1.2 + n * 0.5, 0, 6.283); g.fill(); }
+      for (const [d, n] of near) { g.fillStyle = `rgba(${rgb},${0.25 + n * 0.75})`; g.beginPath(); g.arc(d.x, d.y, 1.2 + n * 1.3, 0, 6.283); g.fill(); }
       requestAnimationFrame(frame);
     }
     addEventListener("mousemove", e => { mouse.x = e.clientX; mouse.y = e.clientY; });
