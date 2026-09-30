@@ -1,16 +1,12 @@
-// ============================================================
-//  EDIT THIS FILE TO UPDATE THE SITE. Nothing else needs touching.
-//  Media goes in assets/media/  (use .mp4 for loops, .jpg for posters)
-// ============================================================
 
 window.SITE = {
-  // Landing page panels (left → right). video: same shot, different layer per panel.
+  
   panels: [
     { id: "art", label: "Art", tags: ["lighting", "materials"], video: "assets/media/crows-of-surrender.mp4" },
     { id: "shaders", label: "Shaders & Performance", tags: ["rendering", "shaders", "optimization, systems"], video: "" },
     { id: "pipeline", label: "Pipeline & Production", tags: ["tools", "workflows", "virtual production"], video: "" },
   ],
-  // Bottom strip. Swap names for SVG logos later.
+  
   tools: ["Unreal Engine", "Houdini", "Blender", "Substance Designer", "Photoshop", "HLSL", "C++", "AI workflows (2D/3D)"],
   name: "Amir Abuzaina",
   tagline: "technical artist, graphics",
@@ -20,10 +16,7 @@ window.SITE = {
   },
 };
 
-// Order here = order on the portfolio page.
-// categories: any of "art", "shaders", "pipeline" (matches landing panels + filters).
-// tags: mini tags shown on cards. software: shown on the project page.
-// video/poster: paths like "assets/media/plugin.mp4". Leave "" for a placeholder.
+
 window.PROJECTS = [
   {
     id: "procedural-pom",
