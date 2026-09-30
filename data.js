@@ -6,8 +6,8 @@
 window.SITE = {
   // Landing page panels (left → right). video: same shot, different layer per panel.
   panels: [
-    { id: "art", label: "Art", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
-    { id: "shaders", label: "Shaders & Performance", tags: ["rendering", "shaders", "optimization"], video: "" },
+    { id: "art", label: "Art", tags: ["lighting", "materials"], video: "assets/media/crows-of-surrender.mp4" },
+    { id: "shaders", label: "Shaders & Performance", tags: ["rendering", "shaders", "optimization, systems"], video: "" },
     { id: "pipeline", label: "Pipeline & Production", tags: ["tools", "workflows", "virtual production"], video: "" },
   ],
   // Bottom strip. Swap names for SVG logos later.
