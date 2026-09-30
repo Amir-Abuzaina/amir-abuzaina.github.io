@@ -35,7 +35,7 @@
     el.innerHTML = SITE.panels.map((p, i) => `
       ${i ? '<div class="bridge"></div>' : ""}
       <a class="panel" href="portfolio.html?cat=${p.id}" data-cat="${p.id}" style="--c:${p.color}">
-        <span class="num">0${i + 1}</span>
+        
         <div class="frame">${panelMedia(p)}</div>
         <div class="cap"><h2>${p.label}</h2><div class="mini">${p.tags.map(cap).join(" · ")}</div></div>
       </a>`).join("");
