@@ -61,7 +61,6 @@
       tray.style.setProperty("--c", panel.color);
       el.style.setProperty("--c", panel.color);
       // position from layout offsets (not getBoundingClientRect) so the hover scale-up can't skew it
-      stageInner.style.transform = "";
       const SCALE = 1.07, cap = panelEl.querySelector(".cap");
       const pTop = panelEl.offsetTop, pH = panelEl.offsetHeight, cy = pTop + pH / 2;
       const capBottom = cy + (pTop + cap.offsetTop + cap.offsetHeight - cy) * SCALE;

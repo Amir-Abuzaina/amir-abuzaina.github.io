@@ -215,3 +215,14 @@ body.lifted .top { opacity: 0; pointer-events: none; }
 .social a.s-artstation:hover { color: #13AFF0; opacity: 1; }
 /* company name: white, a bit bigger */
 .job .co { color: var(--text); font-size: 16px; }
+
+/* smoother hover in/out */
+:root { --ease: cubic-bezier(.22, 1, .36, 1); }
+.stage-inner { transition: transform .8s var(--ease); }
+.panel { transition: transform .6s var(--ease), opacity .6s var(--ease); }
+.panel .frame { transition: border-color .5s var(--ease); }
+.panel .frame video { transition: filter .6s var(--ease); }
+.panel .cap h2 { transition: color .4s var(--ease); }
+.bridge { transition: width .6s var(--ease), background .6s var(--ease); }
+.tray { transition: opacity .5s var(--ease), transform .6s var(--ease), left .5s var(--ease), top .5s var(--ease); }
+.top { transition: opacity .6s var(--ease); }

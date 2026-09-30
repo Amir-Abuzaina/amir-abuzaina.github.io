@@ -8,7 +8,7 @@ window.SITE = {
   panels: [
     { id: "art", label: "Art", color: "#4536E7", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
     { id: "shaders", label: "Technical", color: "#E74536", tags: ["rendering", "shaders", "optimization"], video: "assets/media/pom.mp4" },
-    { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["tools", "workflows", "virtual production"], video: "assets/media/rexy-wheels.mp4" },
+    { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["tools", "workflows", "virtual production"], video: "assets/media/vp-camera-rig.mp4" },
   ],
   // Bottom strip. logo: path to an SVG/PNG in assets/logos/ (white or transparent works best). No logo = name shown as text.
   tools: [
@@ -150,7 +150,7 @@ window.PROJECTS = [
     tags: ["procedural animation", "lighting"],
     software: ["UE5"],
     categories: ["art"],
-    year: "2025",
+    year: "2024",
     video: "assets/media/dead-walking.mp4",
     poster: "assets/media/dead-walking.jpg",
     gallery: ["https://cdna.artstation.com/p/assets/images/images/085/541/194/large/amir-abuzaina-asset.jpg", "https://cdna.artstation.com/p/assets/images/images/085/541/196/large/amir-abuzaina-asset.jpg"],
@@ -194,7 +194,7 @@ window.PROJECTS = [
     tags: ["lighting"],
     software: ["UE5"],
     categories: ["art"],
-    year: "REPLACE",
+    year: "2025",
     video: "assets/media/western-short.mp4",
     poster: "assets/media/western-short.jpg",
     gallery: [],
@@ -229,7 +229,7 @@ window.PROJECTS = [
     tags: ["physics", "destruction", "control rig"],
     software: ["UE5"],
     categories: ["shaders"],
-    year: "REPLACE",
+    year: "2023",
     video: "assets/media/destruction.mp4",
     poster: "assets/media/destruction.jpg",
     highlights: ["Built on Unreal's City Sample destruction", "Authored modelling guidelines for the design team", "Customised the Control Rig and Physics Assets for custom models"],
@@ -269,7 +269,7 @@ window.PROJECTS = [
     tags: ["game prototype", "gameplay"],
     software: ["UE5"],
     categories: ["shaders"],
-    year: "REPLACE",
+    year: "2022",
     video: "assets/media/maryticide.mp4",
     poster: "assets/media/maryticide.jpg",
     gallery: [],
@@ -326,41 +326,39 @@ window.PROJECTS = [
     ],
   },
   {
-    id: "rexy-wheels",
-    title: "Rexy Wheels for Unreal",
-    summary: "Updated the Rexy Wheels camera-control plugin for a newer Unreal and mapped the hardware's extra buttons.",
+    id: "vp-camera-rig",
+    title: "Physical Camera Rig for Virtual Production",
+    summary: "Updated a physical camera-control rig plugin for a newer Unreal and mapped the hardware's extra buttons.",
     tags: ["virtual production", "tools", "camera"],
     software: ["UE5", "C++"],
     categories: ["pipeline"],
-    year: "REPLACE",
-    video: "assets/media/rexy-wheels.mp4",
-    poster: "assets/media/rexy-wheels.jpg",
-    highlights: ["Packaged the plugin for a newer Unreal Engine version", "Mapped the hardware's extra buttons", "Added zoom, pan, tilt and move functions"],
+    year: "2026",
+    video: "assets/media/vp-camera-rig.mp4",
+    poster: "assets/media/vp-camera-rig.jpg",
+    highlights: ["Packaged the camera rig plugin for a newer Unreal Engine version", "Mapped the hardware's extra buttons", "Added zoom, pan, tilt and move functions"],
     breakdown: [
-      { heading: "Overview", body: "I packaged the Rexy Wheels plugin into a newer version of Unreal Engine and updated its functions to map the extra buttons on the hardware, adding zoom, pan, tilt and move." },
+      { heading: "Overview", body: "I packaged the plugin for a physical camera-control rig (hand wheels used to operate virtual cameras) into a newer version of Unreal Engine, and updated its functions to map the extra buttons on the hardware, adding zoom, pan, tilt and move." },
     ],
     links: [],
   },
   {
     id: "mgx-film",
     title: "MGX Virtual Production Short",
-    summary: "Short film shot on an LED virtual production stage at MGX.",
+    summary: "Small virtual production short made at MGX.",
     tags: ["virtual production", "unreal", "film"],
     software: ["UE5"],
     categories: ["pipeline"],
-    year: "REPLACE",
+    year: "2022",
     video: "assets/media/mgx-film.mp4",
     poster: "assets/media/mgx-film.jpg",
-    highlights: ["REPLACE: your role on the shoot", "REPLACE", "REPLACE"],
-    breakdown: [
-      { heading: "Overview", body: "REPLACE: what the project was, your role, and what you set up in Unreal for the stage." },
-    ],
+    highlights: [],
+    breakdown: [],
     links: [],
   },
 ];
 
 // Order for the "All" tab (strongest first). Category tabs use the PROJECTS order above.
-window.ALL_ORDER = ["procedural-pom", "global-vegetation-shader", "vehicle-destruction", "workflow-tools-ue5", "fairuz", "gloria", "mgx-film", "rexy-wheels", "dead-walking", "crows-of-surrender", "polaric-solitude", "cottage", "maryticide", "lighting-doodles", "lighting-doodles-2", "western-short", "sirens"];
+window.ALL_ORDER = ["procedural-pom", "global-vegetation-shader", "vehicle-destruction", "workflow-tools-ue5", "fairuz", "gloria", "mgx-film", "vp-camera-rig", "dead-walking", "crows-of-surrender", "polaric-solitude", "cottage", "maryticide", "lighting-doodles", "lighting-doodles-2", "western-short", "sirens"];
 
 window.EXPERIENCE = [
   {

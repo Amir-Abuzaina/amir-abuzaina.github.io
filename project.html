@@ -30,7 +30,7 @@
           <div class="software">${[...(p.software || []), p.year].filter(Boolean).join(" · ")}</div>
         </div>
         ${(p.gallery || []).length ? `<div class="gallery">${p.gallery.map(g => `<div class="frame"><img src="${g}" alt="" loading="lazy"></div>`).join("")}</div>` : ""}
-        <ul class="highlights">${p.highlights.map(h => `<li>${h}</li>`).join("")}</ul>
+        ${(p.highlights || []).length ? `<ul class="highlights">${p.highlights.map(h => `<li>${h}</li>`).join("")}</ul>` : ""}
         <div class="breakdown">${p.breakdown.map(b => `<h2>${b.heading}</h2><p>${b.body}</p>${b.code ? `<pre><code>${b.code.replace(/</g, "&lt;")}</code></pre>` : ""}${b.image ? `<div class="frame" style="margin-top:14px"><img src="${b.image}" alt=""></div>` : ""}`).join("")}</div>
         <div class="proj-links" id="links">${(p.links || []).filter(l => l.url).map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label} ↗</a>`).join("")}</div>`;
       autoplayInView(el);
