@@ -48,7 +48,7 @@
     // still=true: poster image only (used for the duplicate set in the scrolling loop, so each clip decodes once)
     const thumb = (p, still) => `
       <a class="thumb" href="project.html?id=${p.id}">
-        <div class="frame">${p.video && !still ? `<video src="${vsrc(p.video, "xs")}" muted loop playsinline autoplay preload="metadata"></video>` : p.poster ? `<img src="${isrc(p.poster, "medium")}" alt="" loading="lazy">` : '<div class="ph"></div>'}</div>
+        <div class="frame">${p.video && !still ? `<video src="${vsrc(p.card || p.video, "xs")}" muted loop playsinline autoplay preload="metadata"></video>` : p.poster ? `<img src="${isrc(p.poster, "medium")}" alt="" loading="lazy">` : '<div class="ph"></div>'}</div>
         <span>${p.title}</span>
       </a>`;
     function openTray(cat, panelEl) {
@@ -84,10 +84,11 @@
       track.classList.remove("scroll");
       requestAnimationFrame(() => {
         if (track.scrollHeight > h) {
-          track.innerHTML += list.map(p => thumb(p, true)).join("");
+          track.innerHTML += list.map(p => thumb(p)).join(""); // duplicate set for the seamless loop (videos too)
           track.style.setProperty("--dur", `${Math.ceil(list.length / 2) * 5}s`);
           track.classList.add("scroll");
         }
+        track.querySelectorAll("video").forEach(v => { v.muted = true; v.play().catch(() => {}); });
       });
       tray.classList.add("open");
       document.body.classList.add("lifted");

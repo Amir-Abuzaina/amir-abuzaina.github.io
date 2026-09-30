@@ -22,7 +22,10 @@
     function render(cat) {
       history.replaceState(null, "", cat === "all" ? "portfolio.html" : `portfolio.html?cat=${cat}`);
       fEl.innerHTML = Object.entries(cats).map(([k, v]) => `<button class="${k === cat ? "on" : ""}" data-c="${k}" style="--c:${(SITE.panels.find(x => x.id === k) || {}).color || "var(--accent)"}">${v}</button>`).join("");
-      gEl.innerHTML = PROJECTS.filter(p => cat === "all" || p.categories.includes(cat)).map(p => `
+      const list = cat === "all"
+        ? [...PROJECTS].sort((a, b) => ((ALL_ORDER.indexOf(a.id) + 1) || 999) - ((ALL_ORDER.indexOf(b.id) + 1) || 999))
+        : PROJECTS.filter(p => p.categories.includes(cat));
+      gEl.innerHTML = list.map(p => `
         <a class="card ${p.aspect === "9:16" ? "vertical" : ""}" href="project.html?id=${p.id}">
           <div class="frame">${mediaHTML(p)}</div>
           <div class="card-meta">

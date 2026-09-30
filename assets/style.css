@@ -209,3 +209,9 @@ body:not(.home) .top { background: linear-gradient(var(--bg) 70%, transparent); 
 /* header fades while a card is lifted so the card can use the top of the screen */
 .top { transition: opacity .35s; }
 body.lifted .top { opacity: 0; pointer-events: none; }
+
+/* brand colours on hover */
+.social a.s-linkedin:hover { color: #0A66C2; opacity: 1; }
+.social a.s-artstation:hover { color: #13AFF0; opacity: 1; }
+/* company name: white, a bit bigger */
+.job .co { color: var(--text); font-size: 16px; }

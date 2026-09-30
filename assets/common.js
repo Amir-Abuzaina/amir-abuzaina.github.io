@@ -24,7 +24,7 @@
   const social = document.createElement("div");
   social.className = "social";
   social.innerHTML = Object.entries(S.links)
-    .map(([k, url]) => `<a href="${url}" target="_blank" rel="noopener" aria-label="${k}"><svg viewBox="0 0 24 24">${icons[k] || ""}</svg></a>`)
+    .map(([k, url]) => `<a href="${url}" target="_blank" rel="noopener" aria-label="${k}" class="s-${k}"><svg viewBox="0 0 24 24">${icons[k] || ""}</svg></a>`)
     .join("");
   document.body.append(social);
 })();
@@ -39,7 +39,7 @@ const CATEGORIES = { art: "art", shaders: "technical", pipeline: "pipeline & pro
 // Media element for a project: video loop if given, else poster, else placeholder.
 function mediaHTML(p, full) {
   if (p.video) {
-    return `<video src="${full ? p.video : vsrc(p.video, "sm")}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata"></video>`;
+    return `<video src="${full ? p.video : vsrc(p.card || p.video, "sm")}" ${p.poster ? `poster="${p.poster}"` : ""} muted loop playsinline preload="metadata"></video>`;
   }
   if (p.poster) return `<img src="${p.poster}" alt="${p.title}" loading="lazy">`;
   return `<div class="ph">[ VIDEO LOOP ]</div>`;
