@@ -61,7 +61,7 @@ a:hover { color: var(--accent); }
 .proj-head p { color: var(--dim); margin: 6px 0 14px; }
 .highlights { list-style: none; border-left: 2px solid var(--accent); padding-left: 20px; margin-bottom: 56px; }
 .highlights li { margin: 6px 0; }
-.highlights li::before { content: "// "; color: var(--dim); }
+.highlights li::before { content: "– "; color: var(--dim); }
 .breakdown h2 { font-size: 13px; letter-spacing: 3px; color: var(--accent); margin: 40px 0 10px; text-transform: uppercase; }
 .breakdown p { max-width: 760px; }
 .breakdown pre { background: var(--panel); border: 1px solid var(--line); padding: 18px; overflow-x: auto; font-size: 13px; margin: 14px 0; }
@@ -226,3 +226,36 @@ body.lifted .top { opacity: 0; pointer-events: none; }
 .bridge { transition: width .6s var(--ease), background .6s var(--ease); }
 .tray { transition: opacity .5s var(--ease), transform .6s var(--ease), left .5s var(--ease), top .5s var(--ease); }
 .top { transition: opacity .6s var(--ease); }
+
+/* ---------- phones ---------- */
+@media (max-width: 900px) {
+  .top { position: absolute; padding: 22px 16px; }
+  .social { position: absolute; top: 26px; right: 16px; bottom: auto; transform: none; flex-direction: row; gap: 18px; }
+  .social a { width: 22px; height: 22px; }
+  .page { padding: 140px 16px 80px; }
+
+  /* landing: stacked cards, caption under each card instead of floating over the next one */
+  .stage { position: static; display: block; padding: 150px 16px 20px; }
+  .stage-inner { gap: 0; transform: none !important; }
+  .panels { flex-direction: column; align-items: center; }
+  .panel { width: min(380px, 100%); aspect-ratio: auto; margin-bottom: 44px; }
+  .panel .frame { height: auto; aspect-ratio: 4 / 5; }
+  .panel .cap { position: static; margin-top: 12px; }
+  .panel .cap h2 { font-size: 18px; }
+  .panel .cap .mini { font-size: 12px; }
+  .panel:hover { transform: none; }
+  .panels:has(.panel:hover) .panel:not(:hover) { opacity: 1; }
+  .panel .frame video { filter: none; }
+  .m-thumbs { width: min(380px, 100%); margin: -24px 0 44px; }
+  .toolstrip { position: static; padding: 10px 16px 60px; gap: 16px 24px; }
+  body.lifted .top { opacity: 1; pointer-events: auto; }
+
+  /* portfolio + project pages */
+  .card.vertical { display: block; }
+  .card.vertical .frame, .frame.vertical { width: min(100%, calc(72vh * 9 / 16)); max-width: none; margin: 0 auto; }
+  .card.vertical .card-meta { margin-top: 16px; }
+  .grid { gap: 48px; }
+  .proj-head h1 { font-size: 24px; line-height: 1.3; }
+  .gallery { gap: 12px; margin: 28px 0; }
+  .job .when { font-size: 12px; }
+}

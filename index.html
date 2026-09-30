@@ -30,12 +30,12 @@
   <script>
     // panels
     const el = document.getElementById("panels");
-    const panelMedia = p => p.video ? `<video src="${vsrc(p.video, "sm")}" muted loop playsinline autoplay preload="auto"></video>`
+    const panelPoster = p => (PROJECTS.find(x => x.video === p.video || x.card === p.video) || {}).poster;
+    const panelMedia = p => p.video ? `<video src="${vsrc(p.video, "sm")}" ${panelPoster(p) ? `poster="${panelPoster(p)}"` : ""} muted loop playsinline autoplay preload="auto"></video>`
       : p.image ? `<img src="${p.image}" alt="">` : '<div class="ph">[ LOOP ]</div>';
     el.innerHTML = SITE.panels.map((p, i) => `
       ${i ? '<div class="bridge"></div>' : ""}
       <a class="panel" href="portfolio.html?cat=${p.id}" data-cat="${p.id}" style="--c:${p.color}">
-        
         <div class="frame">${panelMedia(p)}</div>
         <div class="cap"><h2>${p.label}</h2><div class="mini">${p.tags.map(cap).join(" · ")}</div></div>
       </a>`).join("");
@@ -43,7 +43,7 @@
     // hover tray: vertical 2-column bar of moving thumbnails under the hovered panel
     const stageInner = document.querySelector(".stage-inner");
     const tray = document.getElementById("tray"), track = document.getElementById("track");
-    const touch = matchMedia("(hover: none)").matches;
+    const touch = matchMedia("(hover: none), (max-width: 900px)").matches;
     let hideT, current = null;
     // still=true: poster image only (used for the duplicate set in the scrolling loop, so each clip decodes once)
     const thumb = (p, still) => `
