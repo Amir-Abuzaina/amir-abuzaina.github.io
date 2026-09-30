@@ -1,13 +1,16 @@
-
+// ============================================================
+//  EDIT THIS FILE TO UPDATE THE SITE. Nothing else needs touching.
+//  Media goes in assets/media/  (use .mp4 for loops, .jpg for posters)
+// ============================================================
 
 window.SITE = {
-  
+  // Landing page panels (left → right). video: mp4 loop, or image: gif/jpg. color: category colour (filters + hover).
   panels: [
     { id: "art", label: "Art", color: "#4536E7", tags: ["Lighting", "Materials", "Rendering"], video: "assets/media/crows-of-surrender.mp4" },
-    { id: "shaders", label: "Technical", color: "#E74536", tags: ["Shaders", "Optimization", "Systems], video: "assets/media/pom.mp4" },
+    { id: "shaders", label: "Technical", color: "#E74536", tags: ["Shaders", "Optimization", "Systems"], video: "assets/media/pom.mp4" },
     { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["Tools", "Workflows", "Virtual Production"], video: "assets/media/vp-camera-rig.mp4" },
   ],
-  
+  // Bottom strip. logo: path to an SVG/PNG in assets/logos/ (white or transparent works best). No logo = name shown as text.
   tools: [
     { name: "Unreal Engine", logo: "assets/logos/unrealengine.svg" },
     { name: "Houdini", logo: "assets/logos/houdini.svg" },
@@ -26,7 +29,11 @@ window.SITE = {
   },
 };
 
-
+// Order here = order on the portfolio page.
+// gallery: extra images shown on the project page.
+// categories: any of "art", "shaders", "pipeline" (matches landing panels + filters).
+// tags: mini tags shown on cards. software: shown on the project page.
+// video/poster: paths like "assets/media/plugin.mp4". Leave "" for a placeholder.
 window.PROJECTS = [
   {
     id: "procedural-pom",
@@ -55,29 +62,29 @@ window.PROJECTS = [
   {
     id: "lighting-doodles",
     title: "Lighting Doodle I",
-    summary: "Real-Time lighting study.",
+    summary: "Real-time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
     categories: ["art"],
     year: "2026",
     video: "",
     poster: "https://cdnb.artstation.com/p/assets/images/images/100/011/109/large/amir-abuzaina-asset.webp",
-    highlights: ["Real time rendering with Lumen"],
-    breakdown: [{ heading: "Overview", body: "Lumen rendering." }],
+    highlights: [],
+    breakdown: [],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dLJOyW" }],
   },
   {
     id: "lighting-doodles-2",
     title: "Lighting Doodle II",
-    summary: "Real-Time lighting study.",
+    summary: "Real-time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
     categories: ["art"],
     year: "2026",
     video: "",
     poster: "https://cdnb.artstation.com/p/assets/images/images/100/011/113/large/amir-abuzaina-asset.webp",
-    highlights: ["Real time rendering with Lumen"],
-    breakdown: [{ heading: "Overview", body: "Lumen rendering." }],
+    highlights: [],
+    breakdown: [],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dLJOyW" }],
   },
   {
@@ -91,11 +98,7 @@ window.PROJECTS = [
     video: "assets/media/gloria.mp4",
     poster: "assets/media/gloria.jpg",
     gallery: ["https://cdna.artstation.com/p/assets/images/images/090/105/182/large/amir-abuzaina-ls-fur-0066.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/212/large/amir-abuzaina-highresscreenshot00020.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/216/large/amir-abuzaina-highresscreenshot00021.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/222/large/amir-abuzaina-highresscreenshot00022.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/226/large/amir-abuzaina-highresscreenshot00023.jpg", "https://cdna.artstation.com/p/assets/images/images/090/105/228/large/amir-abuzaina-highresscreenshot00024.jpg"],
-    highlights: [
-      "Physical cameras and physically based lighting",
-      "MetaHuman with built-in motion capture",
-      "Half path traced, half Lumen",
-    ],
+    highlights: [],
     breakdown: [
       { heading: "Overview", body: "Part of a short cinematic focused on physical cameras and physically based lighting. I also experimented with the new MetaHuman and built-in motion capture features. Half path traced, half Lumen. Assets are from FAB." },
     ],
@@ -111,12 +114,10 @@ window.PROJECTS = [
     year: "2026",
     video: "assets/media/crows-of-surrender.mp4",
     poster: "assets/media/crows-of-surrender.jpg",
-    aspect: "9:16", 
+    aspect: "9:16", // vertical (social media) piece
     gallery: ["https://cdnb.artstation.com/p/assets/images/images/100/008/879/large/amir-abuzaina-0000v005.webp", "https://cdna.artstation.com/p/assets/images/images/100/008/948/large/amir-abuzaina-0000v002.webp", "https://cdnb.artstation.com/p/assets/images/images/100/009/301/large/amir-abuzaina-ss1.webp", "https://cdnb.artstation.com/p/assets/images/images/100/009/343/large/amir-abuzaina-highresscreenshot00001.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/392/large/amir-abuzaina-highresscreenshot00002.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/408/large/amir-abuzaina-highresscreenshot00003.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/132/large/amir-abuzaina-samuel-chovan-newlevelsequence-0000-00001.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/134/large/amir-abuzaina-samuel-chovan-newlevelsequence-0000-00000.webp"],
     highlights: ["Physically based lighting values", "Physical cameras", "Correct PBR ranges"],
-    breakdown: [
-      { heading: "Overview", body: "Lumen lighting render in Unreal Engine 5, using physically based lighting values with physical cameras and correct PBR ranges." },
-    ],
+    breakdown: [],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/La55D0" }],
   },
   {
@@ -130,7 +131,7 @@ window.PROJECTS = [
     video: "assets/media/polaric-solitude.mp4",
     poster: "assets/media/polaric-solitude.jpg",
     gallery: ["https://cdnb.artstation.com/p/assets/images/images/079/616/275/large/amir-abuzaina-highresscreenshot00007.jpg", "https://cdnb.artstation.com/p/assets/images/images/079/616/371/large/amir-abuzaina-highresscreenshot00008.jpg", "https://cdnb.artstation.com/p/assets/images/images/079/616/403/large/amir-abuzaina-highresscreenshot00000.jpg", "https://cdna.artstation.com/p/assets/images/images/079/616/422/large/amir-abuzaina-highresscreenshot00002.jpg", "https://cdnb.artstation.com/p/assets/images/images/079/616/459/large/amir-abuzaina-highresscreenshot00004.jpg"],
-    highlights: ["Cinematic light study", "Tweaked light scattering on the water simulation"],
+    highlights: [],
     breakdown: [
       { heading: "Overview", body: "A cinematic showcasing a light study and environment in Unreal Engine 5. The water simulation workflow is by DeathreyCG; I tweaked the light scattering and other attributes." },
     ],
@@ -183,17 +184,15 @@ window.PROJECTS = [
   {
     id: "western-short",
     title: "Lighting Doodle III",
-    summary: "Short animation.",
+    summary: "Real-time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
     categories: ["art"],
     year: "2025",
     video: "assets/media/western-short.mp4",
     poster: "assets/media/western-short.jpg",
-    gallery: [],
-    highlights: ["REPLACE"],
-    breakdown: [{ heading: "Overview", body: "REPLACE" }],
-    links: [],
+    highlights: [],
+    breakdown: [],
   },
   {
     id: "global-vegetation-shader",
@@ -213,7 +212,6 @@ window.PROJECTS = [
       { heading: "Assets & wind", body: "Trees were created in SpeedTree and brought into Unreal with a custom Pivot Painter 2 setup, so wind moves trunks, branches and leaves hierarchically instead of as one block." },
       { heading: "Seasons & weather", body: "The material blends spring, autumn and winter leaf textures, and ties into the weather functions for wetness and snow/dust coverage. Static switches handle flowers, trunks, AO and billboards per material instance, with parameters for variation density." },
     ],
-    links: [],
   },
   {
     id: "vehicle-destruction",
@@ -226,10 +224,7 @@ window.PROJECTS = [
     video: "assets/media/destruction.mp4",
     poster: "assets/media/destruction.jpg",
     highlights: ["Built on Unreal's City Sample destruction", "Authored modelling guidelines for the design team", "Customised the Control Rig and Physics Assets for custom models"],
-    breakdown: [
-      { heading: "Overview", body: "I customised Unreal's City Sample destruction system to work on custom models. I authored how assets should be modelled for the design team, and customised the Control Rig and Physics Assets so the destruction works on those models." },
-    ],
-    links: [],
+    breakdown: [],
   },
   {
     id: "fairuz",
@@ -265,10 +260,8 @@ window.PROJECTS = [
     year: "2022",
     video: "assets/media/maryticide.mp4",
     poster: "assets/media/maryticide.jpg",
-    gallery: [],
-  
-    breakdown: [{ heading: "Overview"}],
-    links: [],
+    highlights: [],
+    breakdown: [],
   },
   {
     id: "sirens",
@@ -281,11 +274,7 @@ window.PROJECTS = [
     video: "assets/media/sirens.mp4",
     poster: "assets/media/sirens.jpg",
     gallery: ["https://cdnb.artstation.com/p/assets/images/images/051/037/343/large/arkadukex-screenshot00015.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/380/large/arkadukex-highresscreenshot00003.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/347/large/arkadukex-screenshot00016.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/392/large/arkadukex-highresscreenshot00005.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/359/large/arkadukex-screenshot00018.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/371/large/arkadukex-highresscreenshot00002.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/385/large/arkadukex-highresscreenshot00004.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/394/large/arkadukex-highresscreenshot00006.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/408/large/arkadukex-highresscreenshot00009.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/415/large/arkadukex-highresscreenshot00010.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/418/large/arkadukex-highresscreenshot00011.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/424/large/arkadukex-screenshot00008.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/430/large/arkadukex-screenshot00010.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/433/large/arkadukex-screenshot00011.jpg", "https://cdnb.artstation.com/p/assets/images/images/051/037/437/large/arkadukex-screenshot00012.jpg", "https://cdna.artstation.com/p/assets/images/images/051/037/452/large/arkadukex-screenshot00014.jpg"],
-    highlights: [
-      "Inventory, interaction and puzzle systems in Blueprints",
-      "Ocean shader based on the Gerstner wave model",
-      "Solo university project",
-    ],
+    highlights: [],
     breakdown: [
       { heading: "Overview", body: "A solo game prototype inspired by Little Nightmares. Mechanics (inventory, interactions, puzzles) were built with Unreal's visual scripting, and I developed an ocean shader based on the Gerstner wave model in the shader graph." },
     ],
@@ -329,10 +318,7 @@ window.PROJECTS = [
     video: "assets/media/vp-camera-rig.mp4",
     poster: "assets/media/vp-camera-rig.jpg",
     highlights: ["Packaged the camera rig plugin for a newer Unreal Engine version", "Mapped the hardware's extra buttons", "Added zoom, pan, tilt and move functions"],
-    breakdown: [
-      { heading: "Overview", body: "I packaged the plugin for a physical camera-control rig (hand wheels used to operate virtual cameras) into a newer version of Unreal Engine, and updated its functions to map the extra buttons on the hardware, adding zoom, pan, tilt and move." },
-    ],
-    links: [],
+    breakdown: [],
   },
   {
     id: "mgx-film",
@@ -346,7 +332,6 @@ window.PROJECTS = [
     poster: "assets/media/mgx-film.jpg",
     highlights: [],
     breakdown: [],
-    links: [],
   },
 ];
 
