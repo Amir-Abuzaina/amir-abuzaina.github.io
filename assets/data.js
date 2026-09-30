@@ -1,16 +1,13 @@
-// ============================================================
-//  EDIT THIS FILE TO UPDATE THE SITE. Nothing else needs touching.
-//  Media goes in assets/media/  (use .mp4 for loops, .jpg for posters)
-// ============================================================
+
 
 window.SITE = {
-  // Landing page panels (left → right). video: mp4 loop, or image: gif/jpg. color: category colour (filters + hover).
+  
   panels: [
     { id: "art", label: "Art", color: "#4536E7", tags: ["lighting", "materials", "look dev"], video: "assets/media/crows-of-surrender.mp4" },
     { id: "shaders", label: "Technical", color: "#E74536", tags: ["rendering", "shaders", "optimization"], video: "assets/media/pom.mp4" },
     { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["tools", "workflows", "virtual production"], video: "assets/media/vp-camera-rig.mp4" },
   ],
-  // Bottom strip. logo: path to an SVG/PNG in assets/logos/ (white or transparent works best). No logo = name shown as text.
+  
   tools: [
     { name: "Unreal Engine", logo: "assets/logos/unrealengine.svg" },
     { name: "Houdini", logo: "assets/logos/houdini.svg" },
@@ -29,11 +26,7 @@ window.SITE = {
   },
 };
 
-// Order here = order on the portfolio page.
-// gallery: extra images shown on the project page.
-// categories: any of "art", "shaders", "pipeline" (matches landing panels + filters).
-// tags: mini tags shown on cards. software: shown on the project page.
-// video/poster: paths like "assets/media/plugin.mp4". Leave "" for a placeholder.
+
 window.PROJECTS = [
   {
     id: "procedural-pom",
@@ -118,7 +111,7 @@ window.PROJECTS = [
     year: "2026",
     video: "assets/media/crows-of-surrender.mp4",
     poster: "assets/media/crows-of-surrender.jpg",
-    aspect: "9:16", // vertical (social media) piece
+    aspect: "9:16", 
     gallery: ["https://cdnb.artstation.com/p/assets/images/images/100/008/879/large/amir-abuzaina-0000v005.webp", "https://cdna.artstation.com/p/assets/images/images/100/008/948/large/amir-abuzaina-0000v002.webp", "https://cdnb.artstation.com/p/assets/images/images/100/009/301/large/amir-abuzaina-ss1.webp", "https://cdnb.artstation.com/p/assets/images/images/100/009/343/large/amir-abuzaina-highresscreenshot00001.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/392/large/amir-abuzaina-highresscreenshot00002.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/408/large/amir-abuzaina-highresscreenshot00003.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/132/large/amir-abuzaina-samuel-chovan-newlevelsequence-0000-00001.webp", "https://cdna.artstation.com/p/assets/images/images/100/009/134/large/amir-abuzaina-samuel-chovan-newlevelsequence-0000-00000.webp"],
     highlights: ["Physically based lighting values", "Physical cameras", "Correct PBR ranges"],
     breakdown: [
