@@ -259,3 +259,14 @@ body.lifted .top { opacity: 0; pointer-events: none; }
   .gallery { gap: 12px; margin: 28px 0; }
   .job .when { font-size: 12px; }
 }
+
+/* ---------- startup: mip resolve ---------- */
+.panel .frame canvas.mip { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;
+  filter: saturate(.85) brightness(.85); transition: opacity .35s var(--ease); }
+.panel:hover .frame canvas.mip { filter: none; }
+.panel .frame canvas.mip.done { opacity: 0; }
+.panel .cap { transition: opacity .4s var(--ease); }
+body.intro .panel:not(.resolved) .cap { opacity: 0; }
+.home #field { animation: field-in .6s var(--ease) both; }
+@keyframes field-in { from { opacity: 0; } }
+@media (max-width: 900px) { .panel .frame canvas.mip { filter: none; } }
