@@ -31,7 +31,7 @@ window.PROJECTS = [
   {
     id: "procedural-pom",
     title: "Performant Procedural Parallax Occlusion Interior Mapping",
-    summary: "Atlas-driven POM interiors across thousands of options in a single draw call.",
+    summary: "Thousands of interior variations across instanced meshes in a single draw call.",
     tags: ["shaders", "optimization", "tools"],
     software: ["UE5", "HLSL"],
     categories: ["shaders"],
@@ -266,8 +266,8 @@ window.PROJECTS = [
     video: "assets/media/maryticide.mp4",
     poster: "assets/media/maryticide.jpg",
     gallery: [],
-    highlights: ["REPLACE"],
-    breakdown: [{ heading: "Overview", body: "REPLACE" }],
+  
+    breakdown: [{ heading: "Overview"}],
     links: [],
   },
   {
