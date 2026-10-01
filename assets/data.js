@@ -238,7 +238,7 @@ window.PROJECTS = [
   {
     id: "maryticide",
     title: "Maryticide",
-    summary: "Point-and-click game prototype.",
+    summary: "Point and click game prototype.",
     tags: ["systems"],
     software: ["UE4"],
     categories: ["shaders"],
@@ -251,7 +251,7 @@ window.PROJECTS = [
   {
     id: "sirens",
     title: "Sirens",
-    summary: "Solo game prototype inspired by Little Nightmares, with a Gerstner-wave ocean shader.",
+    summary: "Solo game prototype inspired by Little Nightmares, with a Gerstner ocean shader.",
     tags: ["shaders", "systems"],
     software: ["UE4", "Blueprints"],
     categories: ["shaders"],
