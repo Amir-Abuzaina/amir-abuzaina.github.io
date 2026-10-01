@@ -156,7 +156,7 @@ window.PROJECTS = [
   {
     id: "cottage",
     title: "Cottage",
-    summary: "Light study: volumetric god rays and left/right contrast, kept photoreal.",
+    summary: "Lighting study",
     tags: ["lighting", "materials"],
     software: ["UE5"],
     categories: ["art"],
@@ -164,19 +164,13 @@ window.PROJECTS = [
     video: "",
     poster: "https://cdna.artstation.com/p/assets/images/images/082/319/558/large/amir-abuzaina-ls-foster2-000222.jpg",
     gallery: ["https://cdna.artstation.com/p/assets/images/images/082/319/564/large/amir-abuzaina-highresscreenshot00007.jpg", "https://cdna.artstation.com/p/assets/images/images/082/319/582/large/amir-abuzaina-highresscreenshot00006.jpg"],
-    highlights: [
-      "Spot and point lights to shape god rays through volumetric fog",
-      "Contrast between left and right sides of the scene",
-      "Edited Megascan material instances, customised model",
-    ],
-    breakdown: [
-      { heading: "Overview", body: "Light study and environment set up in Unreal Engine 5. I used Megascan materials with edits on the material instances and customised the model to fit the look. Spot and point lights highlight the god rays through the volumetric fog, creating contrast between the left and right of the scene: a niche lighting scenario, dramatized slightly while keeping photorealism." },
-    ],
+   
+
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dyQmdA" }],
   },
   {
     id: "western-short",
-    title: "Lighting Doodle III",
+    title: "Lighting Study",
     summary: "Real-time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
@@ -203,7 +197,7 @@ window.PROJECTS = [
     breakdown: [
       { heading: "Overview", body: "A dynamic vegetation system where every tree shares one master material that reacts to the weather, seasons and wind systems in the level. Built in Unreal Engine 5.3, before Nanite had proper foliage support, so it had to stay performant with traditional LODs and billboards." },
       { heading: "Assets & wind", body: "Trees were created in SpeedTree and brought into Unreal with a custom Pivot Painter 2 setup, so wind moves trunks, branches and leaves hierarchically instead of as one block." },
-      { heading: "Seasons & weather", body: "The material blends spring, autumn and winter leaf textures, and ties into the weather functions for wetness and snow/dust coverage. Static switches handle flowers, trunks, AO and billboards per material instance, with parameters for variation density." },
+      { heading: "Seasons & weather", body: "The material derives different colors from one texture using per instance random and other instance level variations, and ties into the weather functions for wetness and snow/dust coverage. Static switches handle flowers, trunks, AO and billboards per material instance, with parameters for variation density." },
     ],
   },
   {
@@ -233,13 +227,12 @@ window.PROJECTS = [
     highlights: [
       "Custom post-process: light/shadow quantization, HSV handling, edge detection",
       "Wall and ceiling materials built in Substance Designer",
-      "Custom Substrate materials, incl. a vintage CRT TV screen",
-      "Lumen for real-time GI",
+    
     ],
     breakdown: [
       { heading: "Post-process shader", body: "This project began with a custom post-process shader inspired by Visual Tech Art aesthetics, with personalized adjustments to light/shadow quantization, HSV handling and edge detection." },
-      { heading: "Materials", body: "Materials for walls and ceiling were developed in Substance Designer for a grounded, deliberately textured look. Custom Substrate materials were created, including a TV screen mimicking vintage '90s CRT displays." },
-      { heading: "Scene", body: "I modeled the main house layout; additional props are from FAB and Quixel. The scene uses Lumen for real-time global illumination." },
+      { heading: "Materials", body: "Materials for walls and ceiling were developed in Substance Designer for a grounded, deliberately textured look." },
+      { heading: "Scene", body: "I modeled the main house layout; additional props are from FAB and Quixel. Rendered in Lumen." },
     ],
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/EzmW80" }],
   },
@@ -303,7 +296,7 @@ window.PROJECTS = [
   {
     id: "vp-camera-rig",
     title: "Physical Camera Rig for Virtual Production",
-    summary: "Updated a physical camera-control rig plugin for a newer Unreal and mapped the hardware's extra buttons.",
+    summary: "Updated a physical cameral rig plugin for a newer Unreal and mapped the hardware's extra button mappings.",
     tags: ["virtual production", "tools", "camera"],
     software: ["UE5", "C++"],
     categories: ["pipeline"],
@@ -344,7 +337,7 @@ window.EXPERIENCE = [
       "Engineered custom tools to improve artists' workflows and the studio's pipelines",
       "Optimized high-end interactive and VR applications to meet target hardware needs",
       "Created procedural assets using Houdini, Substance Designer and Unreal Engine",
-      "Combine generative AI and 3D for archviz rendering, establishing AI + 3D workflows",
+      "Combine generative AI and 3D/2D for archviz rendering, establishing AI + 3D/2D workflows",
     ],
   },
   {
