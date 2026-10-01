@@ -101,7 +101,7 @@ window.PROJECTS = [
     id: "crows-of-surrender",
     title: "Crows of Surrender",
     summary: "Lumen lighting render with physical cameras and correct PBR ranges.",
-    tags: ["lighting" , "cinematic"],
+    tags: ["lighting" , "cinematics"],
     software: ["UE5"],
     categories: ["art"],
     year: "2026",
@@ -116,7 +116,7 @@ window.PROJECTS = [
     id: "polaric-solitude",
     title: "Polaric Solitude",
     summary: "Cinematic light study and environment in UE5 with tuned water scattering.",
-    tags: ["lighting", "environment", "cinematic"],
+    tags: ["lighting", "environment", "cinematics"],
     software: ["UE5"],
     categories: ["art"],
     year: "2024",
@@ -333,12 +333,12 @@ window.EXPERIENCE = [
     location: "London, UK",
     period: "Feb 2025 – present",
     points: [
-      "Art directed projects from conceptualization to delivery and delegated tasks effectively",
-      "Developed mechanics for real-time applications in architectural visualization",
-      "Engineered custom tools to improve artists' workflows and the studio's pipelines",
-      "Optimized high-end interactive and VR applications to meet target hardware needs",
+      "Art directed projects from conceptualization to delivery and delegated tasks to artists",
+      "Developed mechanics for real time applications in architectural visualization",
+      "Engineered custom tools to improve artists workflows and the studio's pipelines",
+      "Optimized interactive and VR applications to meet targets",
       "Created procedural assets using Houdini, Substance Designer and Unreal Engine",
-      "Combine generative AI and 3D/2D for archviz rendering, establishing AI + 3D/2D workflows",
+      "Combined generative AI and 3D/2D for archviz rendering",
     ],
   },
   {
@@ -368,13 +368,13 @@ window.EXPERIENCE = [
   },
   {
     role: "3D Generalist",
-    company: "Gen AI Con (Generative AI Media, Marketing & Creative Conference)",
+    company: "Gen AI Con",
     logo: "assets/logos/companies/genaicon.png",
     location: "London, UK",
     period: "Feb 2023 – Jun 2023",
     points: [
       "Utilized generative AI alongside 3D workflows",
-      "Established AI-to-3D pipelines",
+      "Established AI/3D pipelines for early LLMs",
     ],
   },
   {
@@ -384,7 +384,7 @@ window.EXPERIENCE = [
     location: "London, UK",
     period: "Jul 2022 – Feb 2023",
     points: [
-      "Developed demonstrations using AI-driven video tracking data",
+      "Developed applications using AI driven video tracking data",
       "Implemented technical animation workflows including motion capture data processing",
     ],
   },
@@ -394,6 +394,6 @@ window.EXPERIENCE = [
     logo: "assets/logos/companies/fernvaille.png",
     location: "Istanbul, Türkiye",
     period: "Oct 2021 – Feb 2022",
-    points: ["Worked on an indie Unreal Engine title as a 3D generalist and game designer"],
+    points: ["Worked on an indie Unreal Engine title as a 3D generalist and a game designer"],
   },
 ];
