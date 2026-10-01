@@ -3,7 +3,7 @@
 window.SITE = {
 
   panels: [
-    { id: "art", label: "Art", color: "#4536E7", tags: ["lighting", "materials", "cinematics"], video: "assets/media/crows-of-surrender.mp4" },
+    { id: "art", label: "Art", color: "#4536E7", tags: ["lighting", "environment", "cinematics"], video: "assets/media/crows-of-surrender.mp4" },
     { id: "shaders", label: "Technical", color: "#E74536", tags: ["Shaders", "Optimization", "Systems"], video: "assets/media/vegetation-card.mp4" },
     { id: "pipeline", label: "Pipeline & Production", color: "#36E745", tags: ["Tools", "Workflows", "Virtual Production"], video: "assets/media/vp-camera-rig.mp4" },
   ],
