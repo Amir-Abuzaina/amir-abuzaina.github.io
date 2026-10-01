@@ -338,7 +338,7 @@ window.EXPERIENCE = [
       "Engineered custom tools to improve artists workflows and the studio's pipelines",
       "Optimized interactive and VR applications to meet targets",
       "Created procedural assets using Houdini, Substance Designer and Unreal Engine",
-      "Combined generative AI and 3D/2D for archviz rendering",
+      "Integrated AI models into 2D/3D and technical production workflows.",
     ],
   },
   {
