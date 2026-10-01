@@ -320,8 +320,8 @@ window.PROJECTS = [
   },
 ];
 
-// Order for the "All" tab (strongest first). Category tabs use the PROJECTS order above.
-window.ALL_ORDER = ["procedural-pom", "global-vegetation-shader", "vehicle-destruction", "workflow-tools-ue5", "fairuz", "gloria", "mgx-film", "vp-camera-rig", "dead-walking", "crows-of-surrender", "polaric-solitude", "cottage", "maryticide", "lighting-study", "lighting-study-2", "western-short", "sirens"];
+
+window.ALL_ORDER = ["procedural-pom", "global-vegetation-shader", "workflow-tools-ue5",  "gloria",  "crows-of-surrender",  "lighting-study", "vehicle-destruction",  "lighting-study-2" , "polaric-solitude", "dead-walking", "cottage" , "fairuz", "sirens" , "vp-camera-rig", "western-short" ,  "mgx-film", "maryticide"];
 
 window.EXPERIENCE = [
   {
