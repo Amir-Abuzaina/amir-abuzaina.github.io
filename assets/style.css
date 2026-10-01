@@ -270,3 +270,7 @@ body.intro .panel:not(.resolved) .cap { opacity: 0; }
 .home #field { animation: field-in .6s var(--ease) both; }
 @keyframes field-in { from { opacity: 0; } }
 @media (max-width: 900px) { .panel .frame canvas.mip { filter: none; } }
+
+/* experience page: contact email */
+.contact { display: inline-block; font-family: var(--mono); font-size: 13px; color: var(--dim); letter-spacing: .5px; margin: -6px 0 18px; }
+.contact:hover { color: var(--accent); }
