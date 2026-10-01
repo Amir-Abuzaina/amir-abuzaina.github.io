@@ -53,8 +53,8 @@ window.PROJECTS = [
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/oJEyYm" }],
   },
   {
-    id: "lighting-doodles",
-    title: "Lighting Doodle I",
+    id: "lighting-study",
+    title: "Lighting Study",
     summary: "Real-time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
@@ -67,8 +67,8 @@ window.PROJECTS = [
     links: [{ label: "ArtStation", url: "https://www.artstation.com/artwork/dLJOyW" }],
   },
   {
-    id: "lighting-doodles-2",
-    title: "Lighting Doodle II",
+    id: "lighting-study-2",
+    title: "Lighting Study",
     summary: "Real-time lighting study.",
     tags: ["lighting"],
     software: ["UE5"],
@@ -322,7 +322,7 @@ window.PROJECTS = [
 ];
 
 // Order for the "All" tab (strongest first). Category tabs use the PROJECTS order above.
-window.ALL_ORDER = ["procedural-pom", "global-vegetation-shader", "vehicle-destruction", "workflow-tools-ue5", "fairuz", "gloria", "mgx-film", "vp-camera-rig", "dead-walking", "crows-of-surrender", "polaric-solitude", "cottage", "maryticide", "lighting-doodles", "lighting-doodles-2", "western-short", "sirens"];
+window.ALL_ORDER = ["procedural-pom", "global-vegetation-shader", "vehicle-destruction", "workflow-tools-ue5", "fairuz", "gloria", "mgx-film", "vp-camera-rig", "dead-walking", "crows-of-surrender", "polaric-solitude", "cottage", "maryticide", "lighting-study", "lighting-study-2", "western-short", "sirens"];
 
 window.EXPERIENCE = [
   {
