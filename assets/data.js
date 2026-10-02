@@ -333,11 +333,11 @@ window.EXPERIENCE = [
     location: "London, UK",
     period: "Feb 2025 – present",
     points: [
-      "Art directed projects from conceptualization to delivery and delegated tasks to artists",
-      "Developed mechanics for real time applications in architectural visualization",
-      "Engineered custom tools to improve artists workflows and the studio's pipelines",
-      "Optimized interactive and VR applications to meet targets",
-      "Created procedural assets using Houdini, Substance Designer and Unreal Engine",
+      "Art directed projects from conceptualization to delivery and delegated tasks to artists.",
+      "Developed mechanics for real time applications in architectural visualization.",
+      "Engineered custom tools to improve artists workflows and the studio's pipelines.",
+      "Profiled and Optimized interactive and VR applications to meet targets.",
+      "Created procedural assets using Houdini, Substance Designer and Unreal Engine.",
       "Integrated AI models into 2D/3D and technical production workflows.",
     ],
   },
@@ -348,11 +348,11 @@ window.EXPERIENCE = [
     location: "Dubai, UAE",
     period: "Sep 2023 – Feb 2025<br>part-time remote: Dec 2025 – Jun 2026",
     points: [
-      "Established art pipelines and served as a bridge between artists and developers",
-      "Optimized overall performance and technical budgets for authored systems",
-      "Developed procedural solutions and systems within Unreal Engine's frameworks",
-      "Supported animation and rigging teams in technical animation and optimization",
-      "Developed internal workflow tools and authored technical documentation",
+      "Established art pipelines and served as a bridge between artists and developers.",
+      "Optimized overall performance and technical budgets for authored systems.",
+      "Developed procedural solutions and systems within Unreal Engine's frameworks.",
+      "Supported animation and rigging teams in technical animation and optimization.",
+      "Developed internal workflow tools and authored technical documentation.",
     ],
   },
   {
@@ -362,8 +362,8 @@ window.EXPERIENCE = [
     location: "Amman, Jordan",
     period: "Jul 2023 – Sep 2023",
     points: [
-      "Developed interactive experiences using SimLab's proprietary engine",
-      "Optimized VR experiences for target standalone devices",
+      "Developed interactive experiences using SimLab's proprietary engine.",
+      "Optimized VR experiences for target standalone devices(Quest, Pico)",
     ],
   },
   {
@@ -373,8 +373,8 @@ window.EXPERIENCE = [
     location: "London, UK",
     period: "Feb 2023 – Jun 2023",
     points: [
-      "Utilized generative AI alongside 3D workflows",
-      "Established AI/3D pipelines for early LLMs",
+      "Utilized generative AI alongside 3D workflows.",
+      "Established AI/3D pipelines for early LLMs.",
     ],
   },
   {
@@ -384,8 +384,8 @@ window.EXPERIENCE = [
     location: "London, UK",
     period: "Jul 2022 – Feb 2023",
     points: [
-      "Developed applications using AI driven video tracking data",
-      "Implemented technical animation workflows including motion capture data processing",
+      "Developed applications using AI driven video tracking data.",
+      "Implemented technical animation workflows including motion capture data processing.",
     ],
   },
   {
@@ -394,6 +394,6 @@ window.EXPERIENCE = [
     logo: "assets/logos/companies/fernvaille.png",
     location: "Istanbul, Türkiye",
     period: "Oct 2021 – Feb 2022",
-    points: ["Worked on an indie Unreal Engine title as a 3D generalist and a game designer"],
+    points: ["Worked on an indie Unreal Engine title as a 3D generalist and a game designer."],
   },
 ];
