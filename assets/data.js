@@ -336,7 +336,7 @@ window.EXPERIENCE = [
       "Art directed projects from conceptualization to delivery and delegated tasks to artists.",
       "Developed mechanics for real time applications in architectural visualization.",
       "Engineered custom tools to improve artists workflows and the studio's pipelines.",
-      "Profiled and Optimized interactive and VR applications to meet targets.",
+      "Profiled and optimized interactive and VR applications to meet targets.",
       "Created procedural assets using Houdini, Substance Designer and Unreal Engine.",
       "Integrated AI models into 2D/3D and technical production workflows.",
     ],
